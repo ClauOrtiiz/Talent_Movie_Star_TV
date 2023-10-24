@@ -45,4 +45,8 @@ export const obtenerPeliculasSimilares = async (idPelicula) => {
   const respuesta = await axios.get(`${dominio}/3/movie/${idPelicula}/similar?api_key=eb2da5ddb145d6c6e950345fe3d8354c&language=es`)
   return respuesta.data
 }
+export const obtenerPeliculasRecomendadas = async (idPelicula) => {
+  const respuesta = await axios.get(`${dominio}/3/movie/${idPelicula}/recommendations?api_key=eb2da5ddb145d6c6e950345fe3d8354c&language=es`)
+  return respuesta.data
+}
 

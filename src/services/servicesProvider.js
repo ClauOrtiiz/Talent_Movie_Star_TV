@@ -9,3 +9,4 @@ export const obtenerRepartoDePelicula = (idPelicula) =>ServicesTMDB.obtenerRepar
 export const obtenerDetallePelicula = (idPelicula) =>ServicesTMDB.obtenerDetallePelicula(idPelicula)
 export const obtenerVideosPelicula =(idPelicula) => ServicesTMDB.obtenerVideosPelicula(idPelicula)
 export const obtenerPeliculasSimilares =(idPelicula) => ServicesTMDB.obtenerPeliculasSimilares(idPelicula)
+export const obtenerPeliculasRecomendadas =(idPelicula) => ServicesTMDB.obtenerPeliculasRecomendadas(idPelicula)
