@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 // import React from 'react';
 import './Detalles.css';
 import React, { useState, useEffect } from 'react';
+=======
+import Reparto from "../../Componentes/DetallePelicula/Reparto/Reparto"
+>>>>>>> 74e1bc8eacdda3b2e2dbeecbaed1c55350d85d6a
 
 export const DetallePelicula = () => {
   // Clave de API de TMDb
@@ -38,6 +42,7 @@ export const DetallePelicula = () => {
   }, [apiKey, apiUrl, movieId]);
 
   return (
+<<<<<<< HEAD
     <div className="detalle-pelicula">
       {pelicula ? ( // Verificar si se han cargado los datos de la película
         <>
@@ -58,3 +63,12 @@ export const DetallePelicula = () => {
     </div>
   );
 };
+=======
+    <div>
+      
+      <Reparto></Reparto>
+
+    </div>
+  )
+}
+>>>>>>> 74e1bc8eacdda3b2e2dbeecbaed1c55350d85d6a
