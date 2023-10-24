@@ -1,0 +1,47 @@
+.formIngreso-contenedor {
+    overflow: hidden;
+    background-color: #3A3F4E;
+    width: 89%;
+    max-width: 711px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+}
+
+.formIngreso-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 35px 30px;
+    
+}
+
+.ingreso-titulo{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-ingresar {
+    background-color: #F6A63B;
+    color: white;
+    padding: 8px;
+    margin-top: 22px;
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: -3px 6px 9px rgba(0, 0, 0, 0.25);
+}
