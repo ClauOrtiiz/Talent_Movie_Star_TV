@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { buscarPeliculasPorNombre, obtenerEstrenoCartelera, obtenerPopulares } from  '../../../services/servicesProvider'
+import { obtenerPeliculasSimilares } from '../../../services/servicesProvider'
 import { useState } from 'react'
 
 
@@ -9,8 +10,9 @@ export const Peliculas = () => {
   const [datos, setDatos] = useState(null)
   let pagina = 2
   let nombrePelicula = "casa"
+  let idPelicula=8856
   useEffect(() => {
-    buscarPeliculasPorNombre(nombrePelicula,pagina)
+    obtenerPeliculasSimilares(idPelicula )
       .then((respuesta) => {
         console.log(respuesta)
         setDatos(respuesta.results)
