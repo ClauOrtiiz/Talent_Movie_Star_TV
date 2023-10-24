@@ -1,16 +1,15 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { buscarPeliculasPorNombre, obtenerEstrenoCartelera, obtenerPopulares } from '../../../services/services'
+import {  obtenerEstrenoCartelera, obtenerPopulares } from '../../../services/services'
 import { useState } from 'react'
 
 
-export const EstrenoCartelera = () => {
+export const Peliculas = () => {
 
   const [datos, setDatos] = useState(null)
-  let pagina=1
-  let nombrePelicula= 'el señor de'
+  let pagina=2
   useEffect(() => {
-    buscarPeliculasPorNombre(pagina, nombrePelicula)
+    obtenerPopulares(pagina)
       .then((respuesta) => {
         console.log(respuesta)
         setDatos(respuesta.results)

@@ -5,8 +5,7 @@ import { Ingreso } from '../pages/Ingreso/Ingreso'
 import { MovieStar } from '../pages/MovieStar/MovieStar'
 import { Reels } from '../pages/Reels/Reels'
 import { Registro } from '../pages/Registro/Registro'
-import { EstrenoCartelera } from '../pages/ComponenteTest/EstrenosCartelera/EstrenoCartelera'
-import { ActoresReparto } from '../pages/ComponenteTest/ActoresReparto/ActoresReparto'
+import { Peliculas } from '../pages/ComponenteTest/Peliculas/Peliculas'
 export const Router = ()=>{
   return (
 
@@ -17,8 +16,7 @@ export const Router = ()=>{
       <Route path='/MovieStar' element={<MovieStar/>}/>
       <Route path='/Reels' element={<Reels/>}/>
       <Route path='/Registro' element={<Registro/>}/>
-      <Route path='/pruebas/Peliculas' element={<EstrenoCartelera/>}/>
-      <Route path='/pruebas/actores' element={<ActoresReparto/>}/>
+      <Route path='/pruebas/Peliculas' element={<Peliculas/>}/>
       <Route path='*' element={<MovieStar/>}/>
     </Routes>
   )
