@@ -5,6 +5,8 @@ import { Ingreso } from '../pages/Ingreso/Ingreso'
 import { MovieStar } from '../pages/MovieStar/MovieStar'
 import { Reels } from '../pages/Reels/Reels'
 import { Registro } from '../pages/Registro/Registro'
+import { Peliculas } from '../pages/ComponenteTest/Peliculas/Peliculas'
+import { ActoresReparto } from '../pages/ComponenteTest/ActoresReparto/ActoresReparto'
 export const Router = ()=>{
   return (
 
@@ -15,8 +17,9 @@ export const Router = ()=>{
       <Route path='/MovieStar' element={<MovieStar/>}/>
       <Route path='/Reels' element={<Reels/>}/>
       <Route path='/Registro' element={<Registro/>}/>
+      <Route path='/pruebas/Peliculas' element={<Peliculas/>}/>
+      <Route path='/pruebas/Reparto' element={<ActoresReparto/>}/>
       <Route path='*' element={<MovieStar/>}/>
-
     </Routes>
   )
 
