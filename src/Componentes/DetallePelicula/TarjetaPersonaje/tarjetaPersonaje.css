@@ -1,0 +1,20 @@
+.contenedor-tarjetaPersonaje{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgPersonaje img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.nombreActor {
+    color: white;
+    font-size: 10px
+}
+
+.nombrePersonaje {
+    color: #9CA4AB;
+    font-size: 10px
+}
