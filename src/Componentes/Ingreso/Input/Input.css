@@ -1,0 +1,26 @@
+.input-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.input-label {
+    color: white;
+}
+
+.input-input {
+    height: 45px;
+    width: 100%;
+    padding: 0px 0px 0px 17px;
+    border: none;
+    border-bottom: 1px solid #6a6968;
+    outline: 0px;
+    color: white;
+    background-color: transparent;
+}
+
+.input-input:hover{
+    background-color: transparent;
+    border-bottom: 3px solid #F6A63B
+}
