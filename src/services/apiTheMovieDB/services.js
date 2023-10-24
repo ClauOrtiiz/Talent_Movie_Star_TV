@@ -19,7 +19,7 @@ export const obtenerPopulares = async (pagina=1) => {
   return respuesta.data
 }
 
-export const buscarPeliculasPorNombre = async (pagina=1, nombrePelicula) => {
+export const buscarPeliculasPorNombre = async (nombrePelicula,pagina=1) => {
   const respuesta = await axios.get(`${dominio}/3/search/movie?query=${nombrePelicula}&api_key=eb2da5ddb145d6c6e950345fe3d8354c&language=es&include_image_language=es&page=${pagina}`)
   return respuesta.data
 }
@@ -31,4 +31,9 @@ export const obtenerRepartoDePelicula = async (idPelicula) => {
   //overview: descripcion
   //title: titulo español
   //
+}
+
+export const obtenerDetallePelicula = async (idPelicula) => {
+  const respuesta = await axios.get(`${dominio}/3/movie/${idPelicula}?a=1&api_key=eb2da5ddb145d6c6e950345fe3d8354c&language=es&include_image_language=es`)
+  return respuesta.data
 }
