@@ -18,10 +18,9 @@ export const ActoresReparto = () => {
   return (
 
     <div >
-      <h2>hola</h2>
       {datos ?
-        datos.map(elemento =>
-          <div>
+        datos.map((elemento,index) =>
+          <div key={index}>
             <h2>Nombre Actor: {elemento.name}</h2>
             <p>Personaje: {elemento.character}</p>
             <img src={'https://image.tmdb.org/t/p/original' + elemento.profile_path} alt="" width={'150px'} />

@@ -20,7 +20,6 @@ export const Peliculas = () => {
   return (
 
     <div >
-      <h2>hola</h2>
       {datos ?
         datos.map((elemento, index) =>
           <div key={index}>
