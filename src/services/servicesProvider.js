@@ -7,3 +7,4 @@ export const buscarPeliculasPorNombre = (nombrePelicula,pagina)=>ServicesTMDB.bu
 export const obtenerRepartoDePelicula = (idPelicula) =>ServicesTMDB.obtenerRepartoDePelicula(idPelicula)
 
 export const obtenerDetallePelicula = (idPelicula) =>ServicesTMDB.obtenerDetallePelicula(idPelicula)
+export const obtenerVideosPelicula =(idPelicula) => ServicesTMDB.obtenerVideosPelicula(idPelicula)
