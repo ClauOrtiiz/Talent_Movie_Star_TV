@@ -1,7 +1,11 @@
-import React from 'react'
+import Reparto from "../../Componentes/DetallePelicula/Reparto/Reparto"
 
 export const DetallePelicula = () => {
   return (
-    <div>DetallePelicula</div>
+    <div>
+      
+      <Reparto></Reparto>
+
+    </div>
   )
 }
