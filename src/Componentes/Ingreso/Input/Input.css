@@ -14,10 +14,11 @@
     width: 100%;
     padding: 0px 0px 0px 17px;
     border: none;
-    border-bottom: 1px solid #6a6968;
+    border-bottom: 1px solid #9f9f9f;
     outline: 0px;
     color: white;
     background-color: transparent;
+    font-size: 20px;
 }
 
 .input-input:hover{

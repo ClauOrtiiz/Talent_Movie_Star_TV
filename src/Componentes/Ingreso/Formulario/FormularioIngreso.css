@@ -11,20 +11,12 @@
 
 .formIngreso-form{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-end;
     gap: 20px;
     width: 100%;
     padding: 35px 30px;
     
-}
-
-.ingreso-titulo{
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: center;
 }
 
 .btn-ingresar {
@@ -43,5 +35,16 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    box-shadow: -3px 6px 9px rgba(0, 0, 0, 0.25);
+}
+
+.btn-ingresar:hover{
+    box-shadow: -3px 6px 9px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 925px) {
+.formIngreso-form{
+    display: flex;
+    flex-direction: column;
+}
+
 }
