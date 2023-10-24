@@ -41,12 +41,18 @@ export const obtenerVideosPelicula = async (idPelicula) => {
   const respuesta = await axios.get(`${dominio}/3/movie/${idPelicula}/videos?a=1&api_key=eb2da5ddb145d6c6e950345fe3d8354c&language=es&include_image_language=es`)
   return respuesta.data
 }
+
 export const obtenerPeliculasSimilares = async (idPelicula) => {
   const respuesta = await axios.get(`${dominio}/3/movie/${idPelicula}/similar?api_key=eb2da5ddb145d6c6e950345fe3d8354c&language=es`)
   return respuesta.data
 }
+
 export const obtenerPeliculasRecomendadas = async (idPelicula) => {
   const respuesta = await axios.get(`${dominio}/3/movie/${idPelicula}/recommendations?api_key=eb2da5ddb145d6c6e950345fe3d8354c&language=es`)
   return respuesta.data
 }
 
+export const obtenerPeliculasPorGenero = async (idGenero,page) => {
+  const respuesta = await axios.get(`${dominio}/3/discover/movie?language=es&with_genres=${idGenero}&api_key=eb2da5ddb145d6c6e950345fe3d8354c&page=${page}`)
+  return respuesta.data
+}
