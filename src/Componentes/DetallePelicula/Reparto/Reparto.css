@@ -1,0 +1,16 @@
+.contenedorGeneral{
+    display:flex ;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.titleReparto{
+    margin-right: 5px;
+}
+
+.contenedor-tarjetaPersonajes{
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin: 0 7px 0 16px;
+}
