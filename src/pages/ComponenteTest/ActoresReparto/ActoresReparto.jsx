@@ -2,9 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { obtenerRepartoDePelicula } from '../../../services/servicesProvider'
-
 export const ActoresReparto = () => {
-
   const [datos, setDatos] = useState(null)
   const idPelicula = 503616
   useEffect(() => {
@@ -14,9 +12,7 @@ export const ActoresReparto = () => {
         setDatos(respuesta.cast)
       })
   }, [])
-
   return (
-
     <div >
       {datos ?
         datos.map((elemento,index) =>
@@ -26,7 +22,6 @@ export const ActoresReparto = () => {
             <img src={'https://image.tmdb.org/t/p/original' + elemento.profile_path} alt="" width={'150px'} />
           </div>
         )
-
         : ""}
     </div>
   )
