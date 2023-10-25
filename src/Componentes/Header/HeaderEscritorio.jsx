@@ -14,8 +14,7 @@ export const HeaderEscritorio = (perfil) => {
                 </section>
 
             </header>
-
-
+            
             <nav className='seccion-elementos'>
                 <NavegadorEncabezado></NavegadorEncabezado>
             </nav>
