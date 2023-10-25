@@ -1,16 +1,26 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { buscarPeliculasPorNombre, obtenerEstrenoCartelera, obtenerPopulares } from  '../../../services/servicesProvider'
+//(pagina)
+import {  obtenerEstrenoCartelera, obtenerPopulares, obtenerRankeadas } from  '../../../services/servicesProvider'
+//(nombrePelicula,pagina)
+import { buscarPeliculasPorNombre } from '../../../services/servicesProvider'
+//(idPelicula)
+import { obtenerPeliculasSimilares,obtenerPeliculasRecomendadas } from '../../../services/servicesProvider'
+//(idGenero,pagina)
+import { obtenerPeliculasPorGenero } from '../../../services/servicesProvider'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 export const Peliculas = () => {
 
   const [datos, setDatos] = useState(null)
-  let pagina = 2
+  let pagina = 1
   let nombrePelicula = "casa"
+  let idPelicula=8856
+  let idGenero=12
   useEffect(() => {
-    buscarPeliculasPorNombre(nombrePelicula,pagina)
+    obtenerRankeadas(pagina )
       .then((respuesta) => {
         console.log(respuesta)
         setDatos(respuesta.results)
@@ -20,6 +30,7 @@ export const Peliculas = () => {
   return (
 
     <div >
+      <Link to={"/Reels"} className="block px-4 py-2 hover:bg-gray-100 ">Reel </Link>
       {datos ?
         datos.map((elemento, index) =>
           <div key={index}>

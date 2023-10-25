@@ -5,7 +5,7 @@
     justify-content: space-between;
     padding: 12px;
     background-color:#151515 ;
-    opacity: .8;
+    opacity: .9;
   
 
 
@@ -32,8 +32,10 @@
     justify-content: center;
     background-color:#151515 ;
     color: white;
-    padding: 15px;
+    padding: 5px;
     text-decoration: none;
+    opacity: .9;
+    border: transparent;
   
 }
 

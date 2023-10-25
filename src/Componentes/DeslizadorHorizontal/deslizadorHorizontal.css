@@ -1,0 +1,48 @@
+.contenedor-horizontal {
+    width: 100%;
+    overflow: hidden;
+    width: 200px;
+    outline: 4px solid red;
+    height: 200px;
+}
+
+.contenedor-imagenes {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    /* scroll-snap-type: x mandatory; */
+    gap: 10px;
+    /* Espacio entre imágenes */
+    padding: 10px;
+    /* Espacio adicional en los bordes del contenedor */
+    overflow: hidden;
+    /* Oculta la barra de desplazamiento */
+    animation: horizontalScroll 10s linear infinite;
+    /* Animación para el desplazamiento continuo */
+}
+
+.horizontal-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 300px;
+    /* Ancho de cada imagen */
+    height: 200px;
+    /* Altura de cada imagen */
+    cursor: pointer;
+    /* Cambia el cursor al hacer hover sobre una imagen */
+    transition: transform 0.2s;
+    /* Agrega una transición de transformación para hacer efecto cuando se hace clic en una*/
+}
+
+.horizontal-item:hover {
+    transform: scale(1.05);
+}
+
+@keyframes contenedor-imagenes {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); /* Desplaza las imágenes continuamente hacia la izquierda */
+    }
+  }
