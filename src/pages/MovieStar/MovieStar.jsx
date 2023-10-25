@@ -41,8 +41,6 @@ export const MovieStar = () => {
       })
   }, [])
 
-
-
   return (
     <>
       <header className='header'>
