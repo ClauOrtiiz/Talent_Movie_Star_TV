@@ -1,7 +1,7 @@
 .article-pelicula {
-    border: 1px solid blue;
-    width: 200px;
-    height: 350px;
+
+    width: 150px;
+    height: 280px;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -9,10 +9,10 @@
     cursor: pointer;
     position: relative;
     gap: 5px;
- 
+
 }
 
-.section-pelicula {
+.section-pelicula{
 
     display: flex;
     flex-flow: column;
@@ -24,7 +24,9 @@
     text-overflow: ellipsis;
     position: relative;
 }
-
+.section-pelicula h3{
+    color: rgb(116, 112, 112);
+}
 .titulo-pelicula,
 .estreno-pelicula {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -36,7 +38,7 @@
 
 .portada-pelicula {
     object-fit: cover;
-    
+
 
 }
 
@@ -48,10 +50,20 @@
 }
 
 .icon {
+ 
+ }
+
+.seccion-favorito {
     position: absolute;
-    right: 15px;
-    top: 15px;
+    right: 10px;
+    top: 10px;
     font-size: 25px;
     color: #D7A500;
-   
+    width: 35px;
+    height: 35px;
+    display: flex;
+    border-radius:50%;
+    padding: 5px;
+    background-color: #151515;
+    opacity: .7;
 }

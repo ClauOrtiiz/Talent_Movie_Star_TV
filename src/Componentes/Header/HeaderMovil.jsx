@@ -2,7 +2,7 @@ import React from 'react'
 import './HeaderMovil.css'
 import { NavegadorEncabezado } from '../Navegador/NavegadorEncabezado'
 
-export const HeaderMovil = ({perfil}) => {
+export const HeaderMovil = ({ perfil }) => {
   return (
     <>
 
@@ -12,7 +12,7 @@ export const HeaderMovil = ({perfil}) => {
         </section>
 
         <section className='seccion-elementos perfil'>
-          <spam>{perfil}</spam>
+          <h3>{perfil}</h3>
         </section>
 
       </header>
