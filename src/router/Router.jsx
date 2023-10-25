@@ -8,6 +8,7 @@ import { Registro } from '../pages/Registro/Registro'
 import { Peliculas } from '../pages/ComponenteTest/Peliculas/Peliculas'
 import { ActoresReparto } from '../pages/ComponenteTest/ActoresReparto/ActoresReparto'
 import { VideosPelicula } from '../pages/ComponenteTest/VideosPelicula/VideosPelicula'
+import { PruebaDetalle } from '../pages/ComponenteTest/PruebaDetalle/PruebaDetalle'
 export const Router = ()=>{
   return (
 
@@ -21,6 +22,8 @@ export const Router = ()=>{
       <Route path='/pruebas/Peliculas' element={<Peliculas/>}/>
       <Route path='/pruebas/Reparto' element={<ActoresReparto/>}/>
       <Route path='/pruebas/videosPelicula' element={<VideosPelicula/>}/>
+      <Route path='/pruebas/pruebaDetalle' element={<PruebaDetalle/>}/>
+
       <Route path='*' element={<MovieStar/>}/>
     </Routes>
   )

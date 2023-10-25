@@ -9,6 +9,7 @@ import { obtenerPeliculasSimilares,obtenerPeliculasRecomendadas } from '../../..
 //(idGenero,pagina)
 import { obtenerPeliculasPorGenero } from '../../../services/servicesProvider'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 export const Peliculas = () => {
@@ -29,6 +30,7 @@ export const Peliculas = () => {
   return (
 
     <div >
+      <Link to={"/Reels"} className="block px-4 py-2 hover:bg-gray-100 ">Reel </Link>
       {datos ?
         datos.map((elemento, index) =>
           <div key={index}>
