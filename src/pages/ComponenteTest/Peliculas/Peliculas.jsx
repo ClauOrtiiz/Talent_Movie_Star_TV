@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 //(pagina)
-import {  obtenerEstrenoCartelera, obtenerPopulares } from  '../../../services/servicesProvider'
+import {  obtenerEstrenoCartelera, obtenerPopulares, obtenerRankeadas } from  '../../../services/servicesProvider'
 //(nombrePelicula,pagina)
 import { buscarPeliculasPorNombre } from '../../../services/servicesProvider'
 //(idPelicula)
@@ -20,7 +20,7 @@ export const Peliculas = () => {
   let idPelicula=8856
   let idGenero=12
   useEffect(() => {
-    obtenerPeliculasPorGenero(idGenero,pagina )
+    obtenerRankeadas(pagina )
       .then((respuesta) => {
         console.log(respuesta)
         setDatos(respuesta.results)

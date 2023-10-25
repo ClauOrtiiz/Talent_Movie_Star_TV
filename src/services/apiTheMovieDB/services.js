@@ -18,6 +18,14 @@ export const obtenerPopulares = async (pagina=1) => {
   return respuesta.data
 }
 
+
+// Ejemplo
+// https://api.themoviedb.org/3/movie/top_rated?&api_key=eb2da5ddb145d6c6e950345fe3d8354c&language=es&page=1
+export const obtenerRankeadas = async (pagina=1) => {
+  const respuesta = await axios.get(`${dominio}/3/movie/top_rated?&api_key=${api_key}&language=es&page=${pagina}`)
+  return respuesta.data
+}
+
 // Ejemplo
 // https://api.themoviedb.org/3/search/movie?query=flash&api_key=eb2da5ddb145d6c6e950345fe3d8354c&language=es&include_image_language=es&page=1
 export const buscarPeliculasPorNombre = async (nombrePelicula,pagina=1) => {
