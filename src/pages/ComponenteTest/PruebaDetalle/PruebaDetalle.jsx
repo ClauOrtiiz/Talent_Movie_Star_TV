@@ -4,7 +4,7 @@ import { obtenerDetallePelicula } from '../../../services/servicesProvider'
 export const PruebaDetalle = () => {
 
   const [datos, setDatos] = useState(null)
-  let idPelicula=8856
+  let idPelicula=299054
   useEffect(() => {
     obtenerDetallePelicula(idPelicula )
       .then((respuesta) => {
