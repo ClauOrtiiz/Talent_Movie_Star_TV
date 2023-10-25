@@ -6,27 +6,15 @@ const FormularioIngreso = ({ setEmail, setPassword, errorMessage, clickIngreso, 
     return (
         <div className="formIngreso-contenedor">
 
-            <form className='formIngreso-form' >
-                <p className='ingreso-titulo'> Iniciar sesión</p>
+            <form onSubmit={(e) => e.preventDefault()} className='formIngreso-form' >
                 <Input
                     textLabel='Correo'
                     onChange={setEmail}
-                    textoPlaceholder='ejemplo@ejemplo.com'
+                    textoPlaceholder='Email'
                     typeInp='text'
                     value={email}
                     textId='email'
                 />
-
-                <Input
-                    textLabel='Contraseña'
-                    onChange={setPassword}
-                    textoPlaceholder='**********'
-                    typeInp='password'
-                    value={password}
-                    textId='password'
-                />
-
-                <p id="messageError" data-testid="message-Error" className={`messageError ${isActive && 'activate'}`} >{errorMessage}</p>
                 <button className="btn-ingresar" onClick={clickIngreso} data-testid='button-login' > Ingresar</button>
             </form>
         </div>

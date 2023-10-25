@@ -1,16 +1,25 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { buscarPeliculasPorNombre, obtenerEstrenoCartelera, obtenerPopulares } from  '../../../services/servicesProvider'
+//(pagina)
+import {  obtenerEstrenoCartelera, obtenerPopulares } from  '../../../services/servicesProvider'
+//(nombrePelicula,pagina)
+import { buscarPeliculasPorNombre } from '../../../services/servicesProvider'
+//(idPelicula)
+import { obtenerPeliculasSimilares,obtenerPeliculasRecomendadas } from '../../../services/servicesProvider'
+//(idGenero,pagina)
+import { obtenerPeliculasPorGenero } from '../../../services/servicesProvider'
 import { useState } from 'react'
 
 
 export const Peliculas = () => {
 
   const [datos, setDatos] = useState(null)
-  let pagina = 2
+  let pagina = 1
   let nombrePelicula = "casa"
+  let idPelicula=8856
+  let idGenero=12
   useEffect(() => {
-    buscarPeliculasPorNombre(nombrePelicula,pagina)
+    obtenerPeliculasPorGenero(idGenero,pagina )
       .then((respuesta) => {
         console.log(respuesta)
         setDatos(respuesta.results)

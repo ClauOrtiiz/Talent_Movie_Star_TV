@@ -14,7 +14,7 @@ export const Router = ()=>{
     <Routes>
       <Route path='/DetallePelicula' element={<DetallePelicula/>}/>
       <Route path='/Favoritos' element={<Favoritos/>}/>
-      <Route path='/Ingreso' element={<Ingreso/>}/>
+      <Route path='/' element={<Ingreso/>}/>
       <Route path='/MovieStar' element={<MovieStar/>}/>
       <Route path='/Reels' element={<Reels/>}/>
       <Route path='/Registro' element={<Registro/>}/>
