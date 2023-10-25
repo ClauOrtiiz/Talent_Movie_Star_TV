@@ -10,9 +10,9 @@ export const NavegadorMovil = () => {
   // Función para cambiar el icono activo
   const cambiarIconoActivo = (icono) => {
     if (iconActivo === icono) {
-      setIconActivo(null); // Deselecciona el icono si ya está activo
+      setIconActivo(null);
     } else {
-      setIconActivo(icono); // Selecciona el icono si no estaba activo
+      setIconActivo(icono);  
     }
   };
 
