@@ -31,7 +31,8 @@ export const YouTubePlayer = ({videoId, onReady}) => {
   
   return (
     <>
-      <div id={`player-${videoId}`} />      
+      <div id={`player-${videoId}`} />
+      
     </>
   )
 
