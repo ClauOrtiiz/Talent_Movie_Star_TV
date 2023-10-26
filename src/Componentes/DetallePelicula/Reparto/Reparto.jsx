@@ -20,12 +20,13 @@ export const ActoresReparto = ({idPelicula}) => {
 
 
     return (
-        <section className="contenedorGeneral" >
+        <div class="contenedor-flex"> 
+        <section className="reparto" >
             <div>
-            <p className="titleReparto">Reparto</p>
+            <p className="titulo">REPARTO</p>
             </div>
-            
-            <div className="contenedor-tarjetaPersonajes" >
+           
+            <div className="tarjetaPersonajes" >
             {datos ?
                 datos.map((personaje, index) =>
                     <div  key={index} >
@@ -35,12 +36,16 @@ export const ActoresReparto = ({idPelicula}) => {
                             imagenPersonaje={'https://image.tmdb.org/t/p/original' + personaje.profile_path}
                         ></TarjetaPersonaje>
                     </div>
+                    
                 )
 
                 : ""}
                 </div>
+                
         </section>
+        </div>
     );
 };
 
 export default ActoresReparto;
+

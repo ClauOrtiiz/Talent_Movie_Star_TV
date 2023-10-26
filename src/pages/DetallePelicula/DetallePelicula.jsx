@@ -21,23 +21,28 @@ export const DetallePelicula = () => {
       });
   }, []);
 
+    
+
   return (
-    <div>
+    <div className="video-container">
+      
       {video && (
+       
         <iframe
-          width="600"
+          width="100%"
           height="400"
-          src={`https://www.youtube.com/embed/${video.key}?si=aVicG-IXOHeD7NaU`}
+          src ={`https://www.youtube.com/embed/${video.key}?si=aVicG-IXOHeD7NaU`}
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
       )}
+       
         <Descripcion idPeli={idPelicula}></Descripcion>
         <Reparto idPelicula={idPelicula}></Reparto>
         
-     
+       
     </div>
-  );
+        );
 };
