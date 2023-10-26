@@ -23,18 +23,19 @@ export const Descripcion = ({idPeli}) => {
         return (
       
           <div >
-            {datos ?        
-                <div>
+            {datos ?     
+            <div class="contenedor-flex">   
+                <div className='descripcion'>
                   <h2>titulo: {datos.title}</h2>
-                  <p>idPelicula: {datos.id}</p>
-                  <p>descripcion: {datos.overview}</p>
-                  <p>fecha: {datos.release_date}</p>
-                  <p>estrellitas: {datos.vote_average}</p>
-                  {datos.genres.map((genero,index)=>(<li key={index}>idGenero: {genero.id} nombreGenero: {genero.name}</li>))}
+                  {/* <p>idPelicula: {datos.id}</p> */}
+                  <p> {datos.overview}</p>
+                  <p className='fecha'>Fecha: {datos.release_date}</p>
+                  <p className='puntaje'>Puntaje: {datos.vote_average}</p>
+                  {datos.genres.map((genero,index)=>(<li key={index} className='genero'> {genero.name}</li>))}
                   
       
                 </div>      
-      
+                </div> 
               : ""}
           </div>
         )
