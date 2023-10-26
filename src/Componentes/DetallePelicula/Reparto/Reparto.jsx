@@ -4,10 +4,11 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { obtenerRepartoDePelicula } from '../../../services/servicesProvider'
 import './Reparto.css'
-export const ActoresReparto = () => {
+
+export const ActoresReparto = ({idPelicula}) => {
 
     const [datos, setDatos] = useState(null)
-    const idPelicula = 503616
+    // const idPelicula = 503616
 
     useEffect(() => {
         obtenerRepartoDePelicula(idPelicula)
