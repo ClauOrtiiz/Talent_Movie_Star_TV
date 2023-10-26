@@ -33,7 +33,7 @@ export const Reels = () => {
     // };
 
   const handleSlideChange = () => {
-
+    videoPaused = false;
     console.log(playerRef)
     console.log("---0---")
     console.log(playerRef)
@@ -63,6 +63,17 @@ export const Reels = () => {
     }
   };
 
+  let videoPaused = false;
+  const handleSwiperSlideClick = () => {  
+    if(!videoPaused) { 
+      playerRef.current[activeVideoIndex].pauseVideo();
+      videoPaused = true;
+    } else {
+      playerRef.current[activeVideoIndex].playVideo();
+      videoPaused = false; 
+    }  
+  }
+
   return (
     <>
       {!videoData ? '' : <Swiper
@@ -79,7 +90,7 @@ export const Reels = () => {
         onSlideChange={handleSlideChange}
       >
         {videoData.map((elemento, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} onClick={handleSwiperSlideClick}>
             <div className='boxVideo'>
             <div className="boxVideoOverlay" ></div>
               <YouTubePlayer
