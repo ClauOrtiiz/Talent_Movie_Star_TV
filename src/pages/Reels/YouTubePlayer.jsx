@@ -14,6 +14,7 @@ export const YouTubePlayer = ({videoId, onReady}) => {
         }  
       }
     });
+    
 
     playerRef.current = player;
 
@@ -31,7 +32,7 @@ export const YouTubePlayer = ({videoId, onReady}) => {
   
   return (
     <>
-      <div id={`player-${videoId}`} />
+      <div className='miYoutube' id={`player-${videoId}`} style={{ width: '100%', height: '100vh' }}/>
       
     </>
   )

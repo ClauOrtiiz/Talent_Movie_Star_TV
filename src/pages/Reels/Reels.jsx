@@ -22,6 +22,13 @@ export const Reels = () => {
       });
   }, [])
 
+
+  useEffect(() => {
+    if (swiperReady && playerRef.current[activeVideoIndex]) {
+      // Reproducir el primer video automáticamente cuando esté listo
+      playerRef.current[activeVideoIndex].playVideo();
+    }
+  }, [swiperReady, activeVideoIndex]);
     // // Función para pausar el video actual
     // const pauseVideo = (player) => {
     //   player.pauseVideo();
