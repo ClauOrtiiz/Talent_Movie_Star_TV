@@ -9,8 +9,7 @@
     cursor: pointer;
     position: relative;
     gap: 5px;
-    outline: 2px solid green;
-
+ 
 }
 
 .section-pelicula{
@@ -50,10 +49,7 @@
 
 }
 
-.icon {
  
- }
-
 .seccion-favorito {
     position: absolute;
     right: 10px;
@@ -67,4 +63,9 @@
     padding: 5px;
     background-color: #151515;
     opacity: .7;
+}
+
+.linkRouter{
+    text-decoration: none;
+    color: rgb(219, 219, 219);
 }

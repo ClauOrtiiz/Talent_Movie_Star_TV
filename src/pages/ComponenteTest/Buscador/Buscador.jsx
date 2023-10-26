@@ -3,6 +3,7 @@ import lupa from '../../../assets/lupa.png';
 import micro from '../../../assets/micro.png';
 import { buscarPeliculasPorNombre } from '../../../services/servicesProvider';
 import { Link } from 'react-router-dom';
+import './buscador.css'
 
 export const Buscador = () => {
   const [busqueda, setBusqueda] = useState('');
@@ -28,24 +29,24 @@ export const Buscador = () => {
 
   return (
     <>
-      <div>
-        <img src={lupa} alt="" />
-        <input
+      <div className='contenedor-buscador'>
+        <img className='icono-lupa' src={lupa} alt="" />
+        <input className='input-buscador'
           type="text"
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
           placeholder="Buscar películas"
         />
-        <img src={micro} alt="" />
+        <img className='icono-micro' src={micro} alt="" />
       </div>
 
-      <div>
+      <div className='buscador-resultado'>
         {resultados.length > 0 ? (
-          <ul>
+          <ul className='lista-resultado'>
             {resultados.map((pelicula) => (
-              <li key={pelicula.id}>
-                <Link to={`/pruebas/pruebaDetalle/${pelicula.id}`}>{pelicula.title}</Link>
-              </li>
+              <h2 className='lista-resultado-h2' key={pelicula.id}>
+                <Link className='link' to={`/DetallePelicula/${pelicula.id}`}>{pelicula.title}</Link>
+              </h2>
             ))}
           </ul>
         ) : (

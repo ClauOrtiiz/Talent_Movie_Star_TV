@@ -1,13 +1,15 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { HeaderMovil } from '../../Componentes/Header/HeaderMovil'
-import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/DeslizadorHorizontal'
+// import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/DeslizadorHorizontal'
 import { obtenerEstrenoCartelera } from '../../services/servicesProvider'
 import { obtenerPeliculasPorGenero } from '../../services/servicesProvider'
 import { obtenerDetallePelicula, obtenerRepartoDePelicula } from '../../services/servicesProvider'
  import { obtenerVideosPelicula } from '../../services/servicesProvider'
 import { Descripcion } from '../../Componentes/DetallePelicula/DescripcionPelicula/Descripcion'
 import { DetallePelicula } from '../DetallePelicula/DetallePelicula'
+import { Buscador } from '../ComponenteTest/Buscador/Buscador'
+// import { NuevaPrueba } from '../../Componentes/NuevaPrueba/Deslizadorhorizontal'
 
 export const Favoritos = () => {
 
@@ -42,10 +44,8 @@ export const Favoritos = () => {
 
     <>
       <div>Favoritosss</div>
-      <DeslizadorHorizontal peticionApi={obtenerPeliculasPorGenero(80, 1)} ></DeslizadorHorizontal>
-      <Descripcion></Descripcion>
-      <DetallePelicula idPelicula={503616} ></DetallePelicula>
-
+      <Buscador></Buscador>
+     
 
     </>
 
