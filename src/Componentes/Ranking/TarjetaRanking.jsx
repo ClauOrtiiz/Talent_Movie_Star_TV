@@ -1,6 +1,6 @@
 import './TarjetaRanking.css'
 
-export const TarjetaRanking = ({ numero, idPelicula, tituloPelicula, posterPelicula }) => {
+export const TarjetaRanking = ({ nombre, numero, idPelicula, tituloPelicula, posterPelicula }) => {
 
     const urlImagen = 'https://image.tmdb.org/t/p/w500';
     const mostrarPelicula = () => console.log(`obteniendo el ${idPelicula}`);
@@ -16,7 +16,7 @@ export const TarjetaRanking = ({ numero, idPelicula, tituloPelicula, posterPelic
                     src={`${urlImagen}${posterPelicula}`}
                     alt={tituloPelicula}
                 />
-
+                <p className='nombre-pelicula-ranking'>{nombre}</p>
             </article>
         </section>
 
