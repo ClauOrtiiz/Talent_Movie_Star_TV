@@ -5,8 +5,9 @@ import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/Des
 import { obtenerEstrenoCartelera } from '../../services/servicesProvider'
 import { obtenerPeliculasPorGenero } from '../../services/servicesProvider'
 import { obtenerDetallePelicula, obtenerRepartoDePelicula } from '../../services/servicesProvider'
-import { DetallePelicula } from '../../Componentes/DetallePelicula/DetallePelicula'
-import { obtenerVideosPelicula } from '../../services/servicesProvider'
+ import { obtenerVideosPelicula } from '../../services/servicesProvider'
+import { Descripcion } from '../../Componentes/DetallePelicula/DescripcionPelicula/Descripcion'
+import { DetallePelicula } from '../DetallePelicula/DetallePelicula'
 
 export const Favoritos = () => {
 
@@ -42,7 +43,8 @@ export const Favoritos = () => {
     <>
       <div>Favoritosss</div>
       <DeslizadorHorizontal peticionApi={obtenerPeliculasPorGenero(80, 1)} ></DeslizadorHorizontal>
-      <DetallePelicula idPelicula={123}></DetallePelicula>
+      <Descripcion></Descripcion>
+      <DetallePelicula idPelicula={503616} ></DetallePelicula>
 
 
     </>

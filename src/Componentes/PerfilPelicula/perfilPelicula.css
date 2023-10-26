@@ -9,6 +9,7 @@
     cursor: pointer;
     position: relative;
     gap: 5px;
+    outline: 2px solid green;
 
 }
 

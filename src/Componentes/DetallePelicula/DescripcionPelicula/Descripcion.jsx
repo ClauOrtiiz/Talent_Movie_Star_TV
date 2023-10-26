@@ -4,6 +4,7 @@ import { useState } from 'react'
 import {obtenerDetallePelicula} from '../../../services/servicesProvider'
 import './Descripcion.css'
 import { useParams } from 'react-router-dom';
+
 export const Descripcion = () => {
 
     let {idPeli} = useParams()

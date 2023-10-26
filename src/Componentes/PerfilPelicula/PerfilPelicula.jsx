@@ -6,7 +6,7 @@ export const PerfilPelicula = ({ idPelicula, tituloPelicula, posterPelicula, fec
   const urlImagen = 'https://image.tmdb.org/t/p/w500';
   const mostrarPelicula = () => console.log(`obteniendo el ${idPelicula}`);
   const añadirFavoritos = () => console.log(`añadiendo a favoritos... ${idPelicula}`)
-
+  
   return (
     <article className='article-pelicula' key={idPelicula}>
       <section className='seccion-favorito'>

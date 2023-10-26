@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import { obtenerVideosPelicula } from "../../services/servicesProvider";
 import "./Detalles.css";
 
-export const DetallePelicula = () => {
+export const DetallePelicula = ({idPelicula}) => {
   const [video, setVideo] = useState(null);
-  let idPelicula = 298618;
+  // let idPelicula = 298618;
 
   useEffect(() => {
     obtenerVideosPelicula(idPelicula)
