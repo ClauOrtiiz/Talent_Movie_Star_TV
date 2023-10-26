@@ -20,22 +20,23 @@ export const Ranking = () => {
     }, [])
 
     return (
-       
+
+
+        <section className='seccion-tarjetaRanking'>
             
-            <section className='seccion-tarjetaRanking'>
-                {dataRanking.results && dataRanking.results.slice(0, 10).map((ranking, index) => (
-                    <div className='tarjetaRanking' key={index}>
-                        <TarjetaRanking
-                        numero={index+1}
+            {dataRanking.results && dataRanking.results.slice(0, 10).map((ranking, index) => (
+                <div className='tarjetaRanking' key={index}>
+                    <TarjetaRanking
+                        numero={index + 1}
                         idPelicula={ranking.id}
                         tituloPelicula={ranking.original_title}
                         posterPelicula={ranking.poster_path}
-                        >
-                        </TarjetaRanking>
-                    </div>
-                ))}
-            </section>
-   
+                    >
+                    </TarjetaRanking>
+                </div>
+            ))}
+        </section>
+
 
     );
 }

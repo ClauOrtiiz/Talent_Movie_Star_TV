@@ -2,5 +2,5 @@
     display: flex;
     border-radius: 10px;
     gap: 62px;
-    /* font-weight: bold; */
+    -webkit-overflow-scrolling: touch;
 }

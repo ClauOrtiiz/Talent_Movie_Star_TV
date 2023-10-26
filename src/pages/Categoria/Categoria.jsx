@@ -6,23 +6,88 @@ import { obtenerPeliculasPorGenero } from '../../services/servicesProvider'
 import { Estrenos } from '../../Componentes/Estrenos/Estrenos'
 import { Ranking } from '../../Componentes/Ranking/Ranking'
 import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/DeslizadorHorizontal'
-import '../../pages/pages.css'
+import './Categoria.css'
 
 export const Categoria = () => {
 
-    //Funcion para extraccion de cartelera
-    const [dataGeneros, setDataGeneros] = useState([])
-
-    useEffect(() => {
-        obtenerPeliculasPorGenero()
-            .then(genero => {
-                setDataGeneros(genero);
-                console.log('generos', genero)
-            })
-            .catch(error => {
-                setError(error);
-            })
-    }, [])
+    const generos = [
+        {
+            "id": 16,
+            "name": "Animación"
+        },
+        {
+            "id": 28,
+            "name": "Acción"
+        },
+        {
+            "id": 14,
+            "name": "Fantasía"
+        },
+        {
+            "id": 80,
+            "name": "Crimen"
+        },
+        {
+            "id": 53,
+            "name": "Suspense"
+        },
+        {
+            "id": 27,
+            "name": "Terror"
+        },
+        {
+            "id": 18,
+            "name": "Drama"
+        },
+        {
+            "id": 99,
+            "name": "Documental"
+        },
+        {
+            "id": 12,
+            "name": "Aventura"
+        },
+        {
+            "id": 10751,
+            "name": "Familia"
+        },
+        {
+            "id": 10749,
+            "name": "Romance"
+        },
+        {
+            "id": 35,
+            "name": "Comedia"
+        },
+        {
+            "id": 36,
+            "name": "Historia"
+        },
+        {
+            "id": 10752,
+            "name": "Bélica"
+        },
+        {
+            "id": 10402,
+            "name": "Música"
+        },
+        {
+            "id": 878,
+            "name": "Ciencia ficción"
+        },
+        {
+            "id": 9648,
+            "name": "Misterio"
+        },
+        {
+            "id": 10770,
+            "name": "Película de TV"
+        },
+        {
+            "id": 37,
+            "name": "Western"
+        }
+    ]
 
     return (
         <>
@@ -33,32 +98,27 @@ export const Categoria = () => {
             <main className='main'>
                 <Estrenos></Estrenos>
 
-                <h2 className='title-estreno'> Ranking del mes</h2>
-                <article className='seccion-peliculas seccion-peliculas-cartelera'>
-                    <Ranking></Ranking>
+                <article >
+                    <h2 className='title-estreno'>Ranking del mes</h2>
+                    <section className='seccion-peliculas seccion-peliculas-cartelera'>
+                        <Ranking></Ranking>
+                    </section>
                 </article>
 
-
-                <article className='seccion-peliculas '>
-                    <h2>ACCION</h2>
-                    <DeslizadorHorizontal></DeslizadorHorizontal>
-                    {/* <section className='seccion-peliculas-cartelera'>
-                        {dataGeneros.results && dataGeneros.results.map((genero,index) => (
-                            <div className='item'  index={index}>
-                                <PerfilPelicula
-                                    key={genero.id}
-                                    cartelera={genero.id}
-                                    tituloPelicula={genero.original_title}
-                                    posterPelicula={genero.poster_path}
-                                    fechaEstreno={genero.release_date}
-                                ></PerfilPelicula>
-                            </div>
-                        ))}
-                    </section> */}
-
-                </article>
-
+                {generos && generos.map((genero, index) => (
+                    <article key={index}>
+                        <div className='texto-title'>
+                            <h2 className='title-estreno'>{genero.name}</h2>
+                            <p className='title-verMas' >Ver más</p>
+                        </div>
+                        <section className='seccion-peliculas'>
+                            <DeslizadorHorizontal
+                                peticionApi={obtenerPeliculasPorGenero(genero.id, 1)} ></DeslizadorHorizontal>
+                        </section>
+                    </article>
+                ))}
             </main>
+
             <footer className='footer-movil'>
                 <NavegadorMovil></NavegadorMovil>
             </footer>

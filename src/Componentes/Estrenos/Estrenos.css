@@ -1,4 +1,13 @@
-.title-estreno{
+.contenedor-estreno {
+    margin-bottom: 62px;
+
+}
+
+.title-estreno {
     font-size: 1.125rem;
     margin: 0 0 10px 20px;
+}
+.seccion-imgEstreno {
+    align-items: unset !important; 
+
 }
