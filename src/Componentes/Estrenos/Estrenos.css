@@ -7,7 +7,23 @@
     font-size: 1.125rem;
     margin: 0 0 10px 20px;
 }
-.seccion-imgEstreno {
-    align-items: unset !important; 
 
+.seccion-imgEstreno {
+    align-items: unset !important;
+    height: 239px;
+
+}
+
+@media(min-width: 468px) {
+    .seccion-imgEstreno {
+        align-items: unset !important;
+        height: 219px;
+    }
+}
+
+@media(min-width: 1025px) {
+    .seccion-imgEstreno {
+        align-items: unset !important;
+        height: 366px;
+    }
 }

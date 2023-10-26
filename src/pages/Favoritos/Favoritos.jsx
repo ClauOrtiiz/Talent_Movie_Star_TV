@@ -1,53 +1,42 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { HeaderMovil } from '../../Componentes/Header/HeaderMovil'
-// import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/DeslizadorHorizontal'
-import { obtenerEstrenoCartelera } from '../../services/servicesProvider'
-import { obtenerPeliculasPorGenero } from '../../services/servicesProvider'
-import { obtenerDetallePelicula, obtenerRepartoDePelicula } from '../../services/servicesProvider'
- import { obtenerVideosPelicula } from '../../services/servicesProvider'
-import { Descripcion } from '../../Componentes/DetallePelicula/DescripcionPelicula/Descripcion'
-import { DetallePelicula } from '../DetallePelicula/DetallePelicula'
-import { Buscador } from '../ComponenteTest/Buscador/Buscador'
-// import { NuevaPrueba } from '../../Componentes/NuevaPrueba/Deslizadorhorizontal'
+import { PerfilPelicula } from '../../Componentes/PerfilPelicula/PerfilPelicula';
+import './Favoritos.css'
 
 export const Favoritos = () => {
 
-  const [datos, setDatos] = useState(null)
+  const [peliculasFavoritas, setPeliculasFavoritas] = useState(JSON.parse(localStorage.getItem('favoritos')) ?? []);
 
-  const idPelicula = 503616
+  const escucharCheckFavorito = () => {
+    setTimeout(() => {
+      setPeliculasFavoritas(JSON.parse(localStorage.getItem('favoritos')) ?? []);
+    }, 1)
 
-
-  useEffect(() => {
-    obtenerDetallePelicula(idPelicula)
-      .then((data) => {
-        setDatos(data);
-        console.log('detalle de pelicula', data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
-  useEffect(() => {
-    obtenerVideosPelicula(idPelicula)
-      .then((data) => {
-        setDatos(data);
-        console.log('video', data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  }
 
   return (
+    <div >
+      <header className='header'>
+        <HeaderMovil></HeaderMovil>
+      </header>
 
-    <>
-      <div>Favoritosss</div>
-      <Buscador></Buscador>
-     
+      <article className='seccion-peliculas-favorito'>
+        <h2 className='titulo-peliculasFavorito'>Mis Películas Favoritas</h2>
+        <section className='seccion-peliculas-popular'>
+          {peliculasFavoritas.map(pelicula => (
+            <PerfilPelicula
+              key={pelicula.idPelicula}
+              idPelicula={pelicula.idPelicula}
+              escucharCheckFavorito={escucharCheckFavorito}
+              tituloPelicula={pelicula.tituloPelicula}
+              posterPelicula={pelicula.urlImagen}
+              fechaEstreno={pelicula.fechaEstreno} >
 
-    </>
+            </PerfilPelicula>
+          ))}
+        </section>
+      </article>
 
+    </div>
   )
 }

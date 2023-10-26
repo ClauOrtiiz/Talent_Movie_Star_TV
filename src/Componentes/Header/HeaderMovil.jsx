@@ -11,9 +11,9 @@ export const HeaderMovil = ({ perfil }) => {
         <section className='seccion-elementos logo'>
           <img src="../public/Iconos/logo.png" alt="MovieStar" />
         </section>
-        <section>
+        {/* <section>
           <Buscador></Buscador>
-        </section>
+        </section> */}
 
         <section className='seccion-elementos perfil'>
           <h3>{perfil}</h3>
