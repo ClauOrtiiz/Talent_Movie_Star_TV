@@ -30,7 +30,8 @@ export const Ranking = () => {
                         numero={index + 1}
                         idPelicula={ranking.id}
                         tituloPelicula={ranking.original_title}
-                        posterPelicula={ranking.poster_path}
+                        posterPelicula={ranking.backdrop_path}
+                        nombre={ranking.original_title}
                     >
                     </TarjetaRanking>
                 </div>

@@ -48,6 +48,7 @@ export const DeslizadorHorizontal = ({ peticionApi }) => {
                         <div className="item" key={item.id} style={estiloContenedorItems}>
                             <PerfilPelicula
                                 key={item.id}
+                                idPelicula={item.id}
                                 tituloPelicula={item.original_title}
                                 posterPelicula={item.poster_path}
                                 fechaEstreno={item.release_date}
