@@ -16,6 +16,7 @@ export const Router = ()=>{
 
     <Routes>
       <Route path='/DetallePelicula' element={<DetallePelicula/>}/>
+      <Route path='/DetallePelicula/:idPelicula' element={<DetallePelicula/>}/>
       <Route path='/Favoritos' element={<Favoritos/>}/>
       <Route path='/' element={<Ingreso/>}/>
       <Route path='/MovieStar' element={<MovieStar/>}/>
@@ -26,7 +27,7 @@ export const Router = ()=>{
       <Route path='/pruebas/Reparto' element={<ActoresReparto/>}/>
       <Route path='/pruebas/videosPelicula' element={<VideosPelicula/>}/>
       <Route path='/pruebas/pruebaDetalle' element={<PruebaDetalle/>}/>
-      <Route path='/pruebas/pruebaDetalle/:idPeli' element={<PruebaDetalle/>}/>
+      <Route path='/pruebas/pruebaDetalle/:idPelicula' element={<DetallePelicula/>}/>
       <Route path='/pruebas/todascategorias' element={<MostrarTodasCategorias/>}/>
 
       <Route path='*' element={<MovieStar/>}/>
