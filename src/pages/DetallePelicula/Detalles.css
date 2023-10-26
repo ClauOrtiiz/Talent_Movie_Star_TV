@@ -1,4 +1,4 @@
-/* Estilo del contenedor principal */
+ /* Estilo del contenedor principal */
 div {
   background: #141414;
   color: white;
@@ -11,14 +11,14 @@ div {
 }
 
 /* Estilo del título */
-h1 {
+ h1 {
   font-size: 36px;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px #000;
 }
 
 /* Estilo de los botones */
-button {
+ button {
  
   color: rgb(12, 12, 12);
   border: none;
@@ -29,4 +29,4 @@ button {
   border-radius: 5px;
 }
 
-
+ 
