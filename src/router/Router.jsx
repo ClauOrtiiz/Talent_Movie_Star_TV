@@ -3,6 +3,7 @@ import { DetallePelicula } from '../pages/DetallePelicula/DetallePelicula'
 import { Favoritos } from '../pages/Favoritos/Favoritos'
 import { Ingreso } from '../pages/Ingreso/Ingreso'
 import { MovieStar } from '../pages/MovieStar/MovieStar'
+import { Categoria } from '../pages/Categoria/Categoria'
 import { Reels } from '../pages/Reels/Reels'
 import { Registro } from '../pages/Registro/Registro'
 import { Peliculas } from '../pages/ComponenteTest/Peliculas/Peliculas'
@@ -15,16 +16,18 @@ export const Router = ()=>{
 
     <Routes>
       <Route path='/DetallePelicula' element={<DetallePelicula/>}/>
+      <Route path='/DetallePelicula/:idPelicula' element={<DetallePelicula/>}/>
       <Route path='/Favoritos' element={<Favoritos/>}/>
       <Route path='/' element={<Ingreso/>}/>
       <Route path='/MovieStar' element={<MovieStar/>}/>
+      <Route path='/Categoria' element={<Categoria/>}/>
       <Route path='/Reels' element={<Reels/>}/>
       <Route path='/Registro' element={<Registro/>}/>
       <Route path='/pruebas/Peliculas' element={<Peliculas/>}/>
       <Route path='/pruebas/Reparto' element={<ActoresReparto/>}/>
       <Route path='/pruebas/videosPelicula' element={<VideosPelicula/>}/>
       <Route path='/pruebas/pruebaDetalle' element={<PruebaDetalle/>}/>
-      <Route path='/pruebas/pruebaDetalle/:idPeli' element={<PruebaDetalle/>}/>
+      <Route path='/pruebas/pruebaDetalle/:idPelicula' element={<DetallePelicula/>}/>
       <Route path='/pruebas/todascategorias' element={<MostrarTodasCategorias/>}/>
 
       <Route path='*' element={<MovieStar/>}/>

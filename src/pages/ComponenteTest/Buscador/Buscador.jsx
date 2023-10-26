@@ -43,9 +43,9 @@ export const Buscador = () => {
         {resultados.length > 0 ? (
           <ul>
             {resultados.map((pelicula) => (
-              <li key={pelicula.id}>
-                <Link to={`/pruebas/pruebaDetalle/${pelicula.id}`}>{pelicula.title}</Link>
-              </li>
+              <h2 key={pelicula.id}>
+                <Link to={`/DetallePelicula/${pelicula.id}`}>{pelicula.title}</Link>
+              </h2>
             ))}
           </ul>
         ) : (
