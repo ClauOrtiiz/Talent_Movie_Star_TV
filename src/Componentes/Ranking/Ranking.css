@@ -1,0 +1,6 @@
+.seccion-tarjetaRanking{
+    display: flex;
+    border-radius: 10px;
+    gap: 62px;
+    -webkit-overflow-scrolling: touch;
+}

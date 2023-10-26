@@ -1,0 +1,22 @@
+.contenedor-tarjetaRanking {
+    display: flex;
+    align-items: center;
+}
+
+.numero-tarjeta {
+    font-size: 37.37px;
+    color: #FFBF69;
+}
+
+.article-tarjetaPelicula{
+    Width: 182.51px;
+    Height: 114.91px;
+    Left: 7px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+    cursor: pointer;
+    position: relative;
+    justify-content: center;
+    }

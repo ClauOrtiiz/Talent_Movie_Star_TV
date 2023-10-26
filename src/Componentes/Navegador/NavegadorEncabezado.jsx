@@ -11,7 +11,7 @@ export const NavegadorEncabezado = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink className='lista-nav-header' to="/categorias" activeClassName="activo">
+          <NavLink className='lista-nav-header' to="/categoria" activeClassName="activo">
             Categorías
           </NavLink>
         </li>
