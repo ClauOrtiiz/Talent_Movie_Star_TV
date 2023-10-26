@@ -10,6 +10,7 @@ import { obtenerPeliculasSimilares,obtenerPeliculasRecomendadas } from '../../..
 import { obtenerPeliculasPorGenero } from '../../../services/servicesProvider'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Buscador } from '../Buscador/Buscador'
 
 
 export const Peliculas = () => {
@@ -20,7 +21,7 @@ export const Peliculas = () => {
   let idPelicula=8856
   let idGenero=12
   useEffect(() => {
-    obtenerPeliculasPorGenero(idGenero,pagina)
+    buscarPeliculasPorNombre(nombrePelicula)
       .then((respuesta) => {
         console.log(respuesta)
         setDatos(respuesta.results)
@@ -31,6 +32,7 @@ export const Peliculas = () => {
 
     <div >
       <Link to={"/Reels"} className="block px-4 py-2 hover:bg-gray-100 ">Reel </Link>
+      <Buscador/>
       {datos ?
         datos.map((elemento, index) =>
           <div key={index}>
