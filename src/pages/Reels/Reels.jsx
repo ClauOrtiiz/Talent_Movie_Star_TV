@@ -66,7 +66,7 @@ export const Reels = () => {
   return (
     <>
       {!videoData ? '' : <Swiper
-        loop={true}
+        allowTouchMove={true}
         direction="vertical"
         slidesPerView={1}
         spaceBetween={30}
@@ -81,6 +81,7 @@ export const Reels = () => {
         {videoData.map((elemento, index) => (
           <SwiperSlide key={index}>
             <div className='boxVideo'>
+            <div className="boxVideoOverlay" ></div>
               <YouTubePlayer
                 videoId={elemento.key}
                 onReady={(player) => {
