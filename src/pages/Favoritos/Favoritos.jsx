@@ -1,21 +1,50 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import { HeaderMovil } from '../../Componentes/Header/HeaderMovil'
 import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/DeslizadorHorizontal'
 import { obtenerEstrenoCartelera } from '../../services/servicesProvider'
 import { obtenerPeliculasPorGenero } from '../../services/servicesProvider'
+import { obtenerDetallePelicula, obtenerRepartoDePelicula } from '../../services/servicesProvider'
+import { DetallePelicula } from '../../Componentes/DetallePelicula/DetallePelicula'
+import { obtenerVideosPelicula } from '../../services/servicesProvider'
+
+export const Favoritos = () => {
+
+  const [datos, setDatos] = useState(null)
+
+  const idPelicula = 503616
 
 
+  useEffect(() => {
+    obtenerDetallePelicula(idPelicula)
+      .then((data) => {
+        setDatos(data);
+        console.log('detalle de pelicula', data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
- export const Favoritos = () => {
+  useEffect(() => {
+    obtenerVideosPelicula(idPelicula)
+      .then((data) => {
+        setDatos(data);
+        console.log('video', data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
-
- 
   return (
- 
+
     <>
       <div>Favoritosss</div>
-      <DeslizadorHorizontal peticionApi={obtenerPeliculasPorGenero(80,1)} ></DeslizadorHorizontal>
-  
+      <DeslizadorHorizontal peticionApi={obtenerPeliculasPorGenero(80, 1)} ></DeslizadorHorizontal>
+      <DetallePelicula idPelicula={123}></DetallePelicula>
+
+
     </>
 
   )
