@@ -26,6 +26,7 @@ export const Router = ()=>{
       <Route path='/pruebas/Reparto' element={<ActoresReparto/>}/>
       <Route path='/pruebas/videosPelicula' element={<VideosPelicula/>}/>
       <Route path='/pruebas/pruebaDetalle' element={<PruebaDetalle/>}/>
+      <Route path='/pruebas/pruebaDetalle/:idPeli' element={<PruebaDetalle/>}/>
       <Route path='/pruebas/todascategorias' element={<MostrarTodasCategorias/>}/>
 
       <Route path='*' element={<MovieStar/>}/>
