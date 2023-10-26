@@ -1,42 +1,38 @@
-
 import React, { useEffect, useRef } from 'react';
 
-const YouTubePlayer = ({videoId}) => {
+export const YouTubePlayer = ({videoId, onReady}) => {
 
   const playerRef = useRef(null);
 
   useEffect(() => {
+    playerRef.current = null;
+    const player = new YT.Player('player-'+videoId, {
+      videoId, 
+      events: {
+        onReady: () => {
+          onReady(player);
+        }  
+      }
+    });
 
-    // Inicializar API de YouTube
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-
-    // Callback cuando se carga la API  
-    window.onYouTubeIframeAPIReady = () => {
-      
-      // Crear nuevo reproductor 
-      playerRef.current = new YT.Player('player', {
-        videoId,
-        events: {
-          'onReady': onPlayerReady
-        }
-      });
-
-    }
-
-    // Insertar script en el DOM
-    document.body.appendChild(tag);
+    playerRef.current = player;
 
   }, [videoId]);
 
-  // Reproducir video cuando el reproductor esté listo
-  function onPlayerReady(event) {
-    event.target.playVideo();
+  // ...otras funciones de control
+
+  function pauseVideo() {
+    playerRef.current.pauseVideo(); 
   }
-
+  
+  function playVideo() {
+    playerRef.current.playVideo();
+  }
+  
   return (
-    <div id="player"/>
-  );
-}
+    <>
+      <div id={`player-${videoId}`} />      
+    </>
+  )
 
-export default YouTubePlayer;
+}
