@@ -1,12 +1,16 @@
 import Reparto from "../../Componentes/DetallePelicula/Reparto/Reparto";
 import React, { useEffect, useState } from "react";
 import { obtenerVideosPelicula } from "../../services/servicesProvider";
+import { Descripcion } from "../../Componentes/DetallePelicula/DescripcionPelicula/Descripcion";
+import { useParams } from 'react-router-dom';
 import "./Detalles.css";
 
-export const DetallePelicula = ({idPelicula}) => {
+export const DetallePelicula = () => {
+  let {idPelicula} = useParams()
+  idPelicula = idPelicula || 299054;
+
   const [video, setVideo] = useState(null);
   // let idPelicula = 298618;
-
   useEffect(() => {
     obtenerVideosPelicula(idPelicula)
       .then((respuesta) => {
@@ -30,7 +34,10 @@ export const DetallePelicula = ({idPelicula}) => {
           allowfullscreen
         ></iframe>
       )}
-      <Reparto></Reparto>
+        <Descripcion idPeli={idPelicula}></Descripcion>
+        <Reparto idPelicula={idPelicula}></Reparto>
+        
+     
     </div>
   );
 };
