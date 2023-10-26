@@ -6,6 +6,7 @@ import { HeaderMovil } from '../../Componentes/Header/HeaderMovil'
 import { HeaderEscritorio } from '../../Componentes/Header/HeaderEscritorio'
 import { obtenerEstrenoCartelera } from '../../services/servicesProvider'
 import { obtenerPopulares } from '../../services/servicesProvider'
+import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/DeslizadorHorizontal'
 import '../pages.css'
 
 export const MovieStar = () => {
@@ -60,29 +61,19 @@ export const MovieStar = () => {
             Seguir viendo
           </h3>
           <section className='seccion-peliculas-seguir-viendo'>
+          <DeslizadorHorizontal peticionApi={obtenerEstrenoCartelera(2)} ></DeslizadorHorizontal>
 
           </section>
         </article>
 
         <article className='seccion-peliculas '>
           <h2>Cartelera</h2>
-
-          <section className='seccion-peliculas-cartelera'>
-            {dataCartelera.results && dataCartelera.results.map((cartelera) => (
-              <div className='item' >
-                <PerfilPelicula
-                  key={cartelera.id}
-                  cartelera={cartelera.id}
-                  tituloPelicula={cartelera.original_title}
-                  posterPelicula={cartelera.poster_path}
-                  fechaEstreno={cartelera.release_date}
-           
-                ></PerfilPelicula>
-              </div>
-
-            ))}
+          <section>
+            <DeslizadorHorizontal peticionApi={obtenerEstrenoCartelera(3)} ></DeslizadorHorizontal>
 
           </section>
+
+
 
         </article>
         <article className='seccion-peliculas '>
