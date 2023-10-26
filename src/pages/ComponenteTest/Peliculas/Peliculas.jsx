@@ -20,7 +20,7 @@ export const Peliculas = () => {
   let idPelicula=8856
   let idGenero=12
   useEffect(() => {
-    obtenerRankeadas(pagina )
+    obtenerPeliculasPorGenero(idGenero,pagina)
       .then((respuesta) => {
         console.log(respuesta)
         setDatos(respuesta.results)
