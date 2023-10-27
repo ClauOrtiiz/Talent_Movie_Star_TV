@@ -3,12 +3,14 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 // Import Swiper styles
+
+
 import 'swiper/css';
-import 'swiper/css/navigation';
+// import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import './deslizadorHorizontal.css'
+ import './deslizadorHorizontal.css'
 
 import { useState, useEffect } from 'react';
 import { PerfilPelicula } from '../PerfilPelicula/PerfilPelicula';
@@ -16,6 +18,12 @@ import { obtenerEstrenoCartelera } from '../../services/servicesProvider';
 
 
 export const DeslizadorHorizontal = ({ peticionApi }) => {
+
+
+    // return(
+    //     <div>holas</div>
+    // )
+
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -41,7 +49,7 @@ export const DeslizadorHorizontal = ({ peticionApi }) => {
                 scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
-                className='swiper'
+                className='caro'
                 breakpoints={{
                     768: {
                         slidesPerView: 2,
@@ -63,17 +71,21 @@ export const DeslizadorHorizontal = ({ peticionApi }) => {
                         <SwiperSlide key={item.id} className='swiper-slide '>
 
                             <PerfilPelicula
+                                idPelicula={item.id}
                                 tituloPelicula={item.original_title}
                                 posterPelicula={item.poster_path}
                                 fechaEstreno={item.release_date}
                             ></PerfilPelicula>
+
+
                         </SwiperSlide>
 
                     ))}
 
-            </Swiper>
+        </Swiper>
 
-        </section>
+        </section >
+    
     )
 
 }

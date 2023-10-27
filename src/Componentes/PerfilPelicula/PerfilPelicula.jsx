@@ -46,21 +46,35 @@ export const PerfilPelicula = ({ idPelicula, tituloPelicula, posterPelicula, fec
 
 
   return (
-    <article className='article-pelicula' key={idPelicula}>
+
+
+    <article className='article-pelicula'  key={idPelicula}>
+
       <section className='seccion-favorito' onClick={clickFavorito} >
         {meGusta ?
           <img src='../public/Iconos/hearth-2.png' className='icon' alt="No me gusta"></img> :
           <img src='../public/Iconos/hearth-1.png' className='icon' alt="Me gusta"></img>
         }
       </section>
-      <img onClick={() => mostrarPelicula(idPelicula)} className="img-pelicula"
-        src={`${urlImagen}${posterPelicula}`}
-        alt={tituloPelicula}
-      />
-      <section className='section-pelicula'>
-        <h2 className="titulo-pelicula">{tituloPelicula}</h2>
-        <h3 className="estreno-pelicula">{fechaEstreno}</h3>
+
+      <section className='seccion-portada-pelicula'>
+        <Link className='linkRouter' to={`/pruebas/pruebaDetalle/${idPelicula}`} >
+          <img onClick={() => mostrarPelicula(idPelicula)} className="img-pelicula"
+            src={`${urlImagen}${posterPelicula}`}
+            alt={tituloPelicula}
+          />
+          <section className='section-pelicula'>
+            <h2 className="titulo-pelicula">{tituloPelicula}</h2>
+            <h3 className="estreno-pelicula">{fechaEstreno}</h3>
+          </section>
+        </Link >
+
       </section>
+
+
     </article>
+
+
+
   )
 }

@@ -10,7 +10,9 @@
     position: relative;
     gap: 5px;
  
+ 
 }
+
 
 .section-pelicula{
 
@@ -68,4 +70,18 @@
 .linkRouter{
     text-decoration: none;
     color: rgb(219, 219, 219);
+}
+
+.seccion-portada-pelicula{
+    width: 100%; 
+    height: 100%; 
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    
+}
+.img-pelicula{
+    width: 100%;
+    object-fit: cover;
+
 }

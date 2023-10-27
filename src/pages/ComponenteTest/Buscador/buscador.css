@@ -26,7 +26,7 @@
     outline: none; 
     background-color: transparent;
     color: rgb(224, 224, 224);
-  }
+  } */
 
   /* estilos de resultado */
 
@@ -49,12 +49,12 @@
      
   }
   .link:hover {
-     text-decoration: underline; /* Subrayar al pasar el cursor */
+     text-decoration: underline; 
     
   }
 
   .link:visited {
-    color: #f0c651; /* Cambia el color al que desees */
+    color: #f0c651; 
   }
 
   

@@ -7,6 +7,7 @@ import { HeaderEscritorio } from '../../Componentes/Header/HeaderEscritorio'
 import { obtenerEstrenoCartelera } from '../../services/servicesProvider'
 import { obtenerPopulares } from '../../services/servicesProvider'
 import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/Deslizadorhorizontal'
+import { Estrenos } from '../../Componentes/Estrenos/Estrenos'
 
 import '../pages.css'
 
@@ -53,7 +54,7 @@ export const MovieStar = () => {
         <article className='seccion-peliculas seccion-peliculas-estreno'>
           <h2>ESTRENOS</h2>
           <section className='seccion-peliculas-estreno'>
-
+            <Estrenos></Estrenos>
           </section>
         </article>
 
