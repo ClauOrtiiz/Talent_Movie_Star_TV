@@ -1,13 +1,30 @@
 import React from 'react'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+// Import Swiper styles
+
+
+import 'swiper/css';
+// import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+ import './deslizadorHorizontal.css'
+
 import { useState, useEffect } from 'react';
 import { PerfilPelicula } from '../PerfilPelicula/PerfilPelicula';
-import './DeslizadorHorizontal.css'
+import { obtenerEstrenoCartelera } from '../../services/servicesProvider';
+
 
 export const DeslizadorHorizontal = ({ peticionApi }) => {
 
-//  Funcion de peticiones a api
+
+    // return(
+    //     <div>holas</div>
+    // )
+
     const [data, setData] = useState([]);
-    const [posicion, setPosicion] = useState(0);
 
     useEffect(() => {
         peticionApi
@@ -20,45 +37,55 @@ export const DeslizadorHorizontal = ({ peticionApi }) => {
             });
     }, []);
 
-// Funciones para deslizador
-    const cantidadTotalElementos = data.results ? data.results.length : 0;
-    const avanzarCarrusel = () => {
-        if (posicion < cantidadTotalElementos - 1) {
-            setPosicion(posicion + 1);
-        }
-    };
-    const retrocederCarrusel = () => {
-        if (posicion > 0) {
-            setPosicion(posicion - 1);
-        }
-    };
-    const estiloContenedorItems = {
-        transform: `translateX(-${posicion * 0}px)`,
-    };
- 
-
     return (
-        <article className="contenedor">
-            <div className="control control-avanzar" onClick={avanzarCarrusel} disabled={posicion >= cantidadTotalElementos - 1}>
-                <img src="../public/Iconos/next.png" alt="" />
-            </div>
-            <section className="contenedor-items" >
+        <section className='contenedor-swiper'>
+            <Swiper
+                // install Swiper modules
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                spaceBetween={20}
+                slidesPerView={2}
+                navigation
+
+                scrollbar={{ draggable: true }}
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log('slide change')}
+                className='caro'
+                breakpoints={{
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    800: {
+                        slidesPerView: 4,
+                    },
+                    900: {
+                        slidesPerView: 6,
+                    },
+                    1024: {
+                        slidesPerView: 8,
+                    },
+                }}
+            >
+
                 {data.results &&
-                    data.results.slice(posicion).map((item) => (
-                        <div className="item" key={item.id} style={estiloContenedorItems}>
+                    data.results.map((item) => (
+                        <SwiperSlide key={item.id} className='swiper-slide '>
+
                             <PerfilPelicula
-                                key={item.id}
                                 idPelicula={item.id}
                                 tituloPelicula={item.original_title}
                                 posterPelicula={item.poster_path}
                                 fechaEstreno={item.release_date}
                             ></PerfilPelicula>
-                        </div>
+
+
+                        </SwiperSlide>
+
                     ))}
-            </section>
-            <div className="control control-retroceder" onClick={retrocederCarrusel} disabled={posicion <= 0}>
-                <img src="../public/Iconos/next.png" alt="" />
-            </div>
-        </article>
-    );
-};
+
+        </Swiper>
+
+        </section >
+    
+    )
+
+}

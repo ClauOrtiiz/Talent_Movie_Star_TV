@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavegadorEncabezado } from '../Navegador/NavegadorEncabezado'
+import { Buscador } from '../../pages/ComponenteTest/Buscador/Buscador'
 
 export const HeaderEscritorio = (perfil) => {
     return (
@@ -9,6 +10,7 @@ export const HeaderEscritorio = (perfil) => {
                 <section className='seccion-elementos logo'>
                     <img src="../public/Iconos/logo.png" alt="MovieStar" />
                 </section>
+               
                 <section className='seccion-elementos perfil'>
                     <spam>{perfil}</spam>
                 </section>

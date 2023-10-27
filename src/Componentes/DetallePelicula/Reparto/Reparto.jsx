@@ -3,6 +3,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { obtenerRepartoDePelicula } from '../../../services/servicesProvider'
+import { obtenerVideosPelicula } from '../../../services/servicesProvider'
 import './Reparto.css'
 
 export const ActoresReparto = ({idPelicula}) => {
@@ -14,6 +15,14 @@ export const ActoresReparto = ({idPelicula}) => {
         obtenerRepartoDePelicula(idPelicula)
             .then((respuesta) => {
                 console.log(respuesta)
+                setDatos(respuesta.cast)
+            })
+    }, [])
+
+    useEffect(() => {
+        obtenerVideosPelicula(idPelicula)
+            .then((respuesta) => {
+                console.log( 'probando videos',respuesta)
                 setDatos(respuesta.cast)
             })
     }, [])

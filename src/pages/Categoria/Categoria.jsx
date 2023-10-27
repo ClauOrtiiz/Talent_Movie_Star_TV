@@ -5,7 +5,7 @@ import { HeaderMovil } from '../../Componentes/Header/HeaderMovil'
 import { obtenerPeliculasPorGenero } from '../../services/servicesProvider'
 import { Estrenos } from '../../Componentes/Estrenos/Estrenos'
 import { Ranking } from '../../Componentes/Ranking/Ranking'
-import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/DeslizadorHorizontal'
+import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/Deslizadorhorizontal'
 import './Categoria.css'
 
 export const Categoria = () => {
@@ -96,7 +96,7 @@ export const Categoria = () => {
             </header>
 
             <main className='main'>
-                <Estrenos></Estrenos>
+                
 
                 <article >
                     <h2 className='title-estreno'>Ranking del mes</h2>

@@ -12,7 +12,7 @@ export const NavegadorMovil = () => {
     if (iconActivo === icono) {
       setIconActivo(null);
     } else {
-      setIconActivo(icono);  
+      setIconActivo(icono);
     }
   };
 
@@ -20,46 +20,46 @@ export const NavegadorMovil = () => {
     <section className="section-icono-nav">
       <Link
         to="/MovieStar"
-        className={`nav-link ${location.pathname === '/MovieStar' || iconActivo === 'MovieStar' ? 'activo' : ''}`}
-        onMouseDown={() => cambiarIconoActivo('MovieStar')}
+        onClick={() => cambiarIconoActivo('MovieStar')}
       >
         <img
           src="../public/Iconos/home.png"
           alt="Icono MovieStar"
-          className={`icono-nav ${iconActivo === 'MovieStar' ? 'activo' : ''}`}
         />
       </Link>
       <Link
-        to="/Ingreso"
-        className={`nav-link ${location.pathname === '/Ingreso' || iconActivo === 'Ingreso' ? 'activo' : ''}`}
-        onMouseDown={() => cambiarIconoActivo('Ingreso')}
+
+
+        to="/pruebas/Peliculas"
+        className='icon-nav'
+        onClick={() => cambiarIconoActivo('Ingreso')}
       >
         <img
-         src="../public/Iconos/search.png"
+          src="../public/Iconos/search.png"
           alt="Icono Ingreso"
-          className={`icono-nav ${iconActivo === 'Ingreso' ? 'activo' : ''}`}
+          className='icon-nav'
         />
       </Link>
       <Link
         to="/Reels"
-        className={`nav-link ${location.pathname === '/Reels' || iconActivo === 'Reels' ? 'activo' : ''}`}
-        onMouseDown={() => cambiarIconoActivo('Reels')}
+        className='icon-nav'
+        onClick={() => cambiarIconoActivo('Reels')}
       >
         <img
           src="../public/Iconos/playlist.png"
           alt="Icono Reels"
-          className={`icono-nav ${iconActivo === 'Reels' ? 'activo' : ''}`}
+          className='icon-nav'
         />
       </Link>
       <Link
         to="/Favoritos"
         className={`nav-link ${location.pathname === '/Favoritos' || iconActivo === 'Favoritos' ? 'activo' : ''}`}
-        onMouseDown={() => cambiarIconoActivo('Favoritos')}
+        onClick={() => cambiarIconoActivo('Favoritos')}
       >
         <img
           src="../public/Iconos/hearth.png"
           alt="Icono Favoritos"
-          className={`icono-nav ${iconActivo === 'Favoritos' ? 'activo' : ''}`}
+          className='icon-nav'
         />
       </Link>
     </section>
