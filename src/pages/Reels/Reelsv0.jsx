@@ -4,49 +4,58 @@ import "swiper/css";
 import './Reels.css';
 import { obtenerVideosPelicula } from "../../services/servicesProvider";
 import { YouTubePlayer } from "./YouTubePlayer";
-
-export const Reels = () => {
-  const [videoData, setVideoData] = useState([]);
+export const Reelsv0 = () => {
+  const [videoData, setVideoData] = useState(null);
   const swiperRef = useRef(null);
   const [swiperReady, setSwiperReady] = useState(false);
   const playerRef = useRef([]);
 
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
-  const [loadingMoreVideos, setLoadingMoreVideos] = useState(false);
-  const misPeliculas = [315162, 667538, 315162, 16418, 1175873, 76600, 667538];
-  const [currentMovieIndex, setCurrentMovieIndex] = useState(-1);
-  let videoPaused = false;
+
+
   useEffect(() => {
-    cargarVideosPorId(misPeliculas[0]);
+    obtenerVideosPelicula(315162)
+      .then((respuesta) => {
+        console.log(respuesta);
+        setVideoData(respuesta.results);
+      });
   }, [])
 
-  const cargarVideosPorId = (movieId) => {
-    obtenerVideosPelicula(movieId)
-      .then((respuesta) => {
-        
-        const newVideoData = [...videoData, ...respuesta.results];
-        setVideoData(newVideoData);
-        setLoadingMoreVideos(false);
-        console.log("cargando NUEVOS VIDEOS")
-        console.log("videos cargados", respuesta.results)
-        console.log("----fin carga----")
-        setCurrentMovieIndex(prev => prev + 1); 
-      });
-  };
 
-
-  /*   useEffect(() => {
-      if (swiperReady && playerRef.current[activeVideoIndex]) {
-        // Reproducir el primer video automáticamente cuando esté listo
-        playerRef.current[activeVideoIndex].playVideo();
-      }
-    }, [swiperReady, activeVideoIndex]); */
+  useEffect(() => {
+    if (swiperReady && playerRef.current[activeVideoIndex]) {
+      // Reproducir el primer video automáticamente cuando esté listo
+      playerRef.current[activeVideoIndex].playVideo();
+    }
+  }, [swiperReady, activeVideoIndex]);
+    // // Función para pausar el video actual
+    // const pauseVideo = (player) => {
+    //   player.pauseVideo();
+    // };
+  
+    // // Función para reproducir el video actual
+    // const playVideo = (player) => {
+    //   player.playVideo();
+    // };
 
   const handleSlideChange = () => {
     videoPaused = false;
-
+    console.log(playerRef)
+    console.log("---0---")
+    console.log(playerRef)
+    console.log("---0---")
+    console.log(swiperReady)
+    console.log("-----1---i")
+    console.log(playerRef.current)
+    console.log("---2---")
+    console.log(videoData)
+    console.log("---3---")
     if (swiperReady && playerRef.current && videoData) {
       const activeIndex = swiperRef.current.activeIndex;
+      console.log(playerRef)
+      console.log("---------")
+      console.log(playerRef.current[activeVideoIndex])
+      console.log("---------")
       // Pausar el video anterior (si existe)
       if (playerRef.current[activeVideoIndex]) {
         playerRef.current[activeVideoIndex].pauseVideo();
@@ -54,38 +63,21 @@ export const Reels = () => {
 
       // Reproducir el video actual
       // playerRef.current[activeIndex].loadVideoById(videoData[activeIndex].key);
-
-      if (playerRef.current[activeIndex]) {
-        playerRef.current[activeIndex].playVideo();
-      }
-
-
+      playerRef.current[activeIndex].playVideo();
 
       setActiveVideoIndex(activeIndex);
-      if (activeIndex === videoData.length - 1 && !loadingMoreVideos) {
-
-        const nextMovieIdIndex = currentMovieIndex + 1;
-        console.log("yestest1",nextMovieIdIndex)
-        if (nextMovieIdIndex < misPeliculas.length) {
-          console.log("yestest2",nextMovieIdIndex)
-          const nextMovieId = misPeliculas[nextMovieIdIndex];
-          setLoadingMoreVideos(true);
-          console.log("yestest3",nextMovieId)
-          cargarVideosPorId(nextMovieId);
-        }
-      }
     }
   };
 
-
-  const handleSwiperSlideClick = () => {
-    if (!videoPaused) {
+  let videoPaused = false;
+  const handleSwiperSlideClick = () => {  
+    if(!videoPaused) { 
       playerRef.current[activeVideoIndex].pauseVideo();
       videoPaused = true;
     } else {
       playerRef.current[activeVideoIndex].playVideo();
-      videoPaused = false;
-    }
+      videoPaused = false; 
+    }  
   }
 
   return (
@@ -106,12 +98,14 @@ export const Reels = () => {
         {videoData.map((elemento, index) => (
           <SwiperSlide key={index} onClick={handleSwiperSlideClick}>
             <div className='boxVideo'>
-              <div className="boxVideoOverlay" ></div>
+            <div className="boxVideoOverlay" ></div>
               <YouTubePlayer
                 videoId={elemento.key}
                 onReady={(player) => {
-                  console.log("prueba", player)
+                  console.log("check", player)
                   playerRef.current[index] = player;
+
+                  console.log("valorActual",playerRef)
                 }}
               />
             </div>
