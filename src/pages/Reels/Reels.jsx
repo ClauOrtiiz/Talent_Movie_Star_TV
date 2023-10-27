@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import './Reels.css';
-import { obtenerVideosPelicula } from "../../services/servicesProvider";
+import { obtenerEstrenoCartelera, obtenerPeliculasRecomendadas, obtenerPopulares, obtenerVideosPelicula } from "../../services/servicesProvider";
 import { YouTubePlayer } from "./YouTubePlayer";
 export const Reels = () => {
   const [videoData, setVideoData] = useState([]);
@@ -11,14 +11,29 @@ export const Reels = () => {
   const playerRef = useRef([]);
 
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
+  const [meGusta, setmeGusta] = useState(false);
   let videoPaused = false;
 
   useEffect(() => {
     // Llamamos a la función para cargar los videos de las dos primeras películas.
     console.log("test")
     const misPeliculas = [315162, 667538, 507089, 901362];
-    cargarVideos(misPeliculas);
+    obtenerPopulares()
+      .then((respuesta) => {
+        console.log(respuesta)
+        const idPeliculas = obtenerIdsDesdeObjeto(respuesta)
+        cargarVideos(idPeliculas);
+      })
+
   }, []);
+
+  function obtenerIdsDesdeObjeto(objeto) {
+    if (objeto && Array.isArray(objeto.results)) {
+      return objeto.results.map(item => item.id);
+    } else {
+      return [];
+    }
+  }
 
   const cargarVideos = (peliculasId) => {
     const promises = peliculasId.map(movieId => obtenerVideosPelicula(movieId));
@@ -27,7 +42,7 @@ export const Reels = () => {
     Promise.all(promises)
       .then((respuestas) => {
 
-        const allVideos = respuestas.flatMap(respuesta => {
+        let allVideos = respuestas.flatMap(respuesta => {
           // Obtener el id de la película actual
           const idPelicula = respuesta.id
           // Filtrar los videos por tipo
@@ -47,6 +62,9 @@ export const Reels = () => {
           return selectedVideos;
         });
         allVideos.sort(() => Math.random() - 0.5);
+        if (allVideos.length > 15) {
+          allVideos = allVideos.slice(0, 15);
+        }
         console.log(allVideos)
         setVideoData(allVideos);
       })
@@ -118,6 +136,12 @@ export const Reels = () => {
         {videoData.map((elemento, index) => (
           <SwiperSlide key={index} onClick={handleSwiperSlideClick}>
             <div className='boxVideo'>
+              <section className='seccion-favorito' >
+                {meGusta ?
+                  <img src='../public/Iconos/hearth-2.png' className='icon' alt="No me gusta"></img> :
+                  <img src='../public/Iconos/hearth-1.png' className='icon' alt="Me gusta"></img>
+                }
+              </section>
               <div className="boxVideoOverlay" ></div>
               <YouTubePlayer
                 videoId={elemento.key}
