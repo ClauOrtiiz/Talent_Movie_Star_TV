@@ -1,18 +1,34 @@
-.contenedorGeneral {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color: #c21313;
-    padding: 05px;
-    /* max-width: 1200px; */
-    
-  }
+/* Estilo del contenedor flex */
+.contenedor-flex {
+  display: flex;
+  background: #141414;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
 
-  
-  /* Estilo del contenedor de tarjetas de actores */
-  .contenedor-descripcion {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0px;
-  }
-  
+/* Estilo de la descripción */
+.descripcion {
+
+  font-size: 10px;
+  text-shadow: 2px 2px 4px #000;
+  width: 100%; 
+  margin-left: 25px; 
+  margin-right: 25px;
+}
+.genero {
+  display: inline-block; 
+  margin: 10px;
+  align-items: center;
+}
+.descripcion p {
+  text-align:justify;
+}
+.fecha {
+  display: inline-block; 
+  margin: 10px;
+  align-items: center;
+}
+.puntaje {
+  float: right;
+} 

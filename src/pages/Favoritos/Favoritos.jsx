@@ -1,22 +1,42 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { HeaderMovil } from '../../Componentes/Header/HeaderMovil'
-import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/DeslizadorHorizontal'
-import { obtenerEstrenoCartelera } from '../../services/servicesProvider'
-import { obtenerPeliculasPorGenero } from '../../services/servicesProvider'
+import { PerfilPelicula } from '../../Componentes/PerfilPelicula/PerfilPelicula';
+import './Favoritos.css'
 
+export const Favoritos = () => {
 
+  const [peliculasFavoritas, setPeliculasFavoritas] = useState(JSON.parse(localStorage.getItem('favoritos')) ?? []);
 
- export const Favoritos = () => {
+  const escucharCheckFavorito = () => {
+    setTimeout(() => {
+      setPeliculasFavoritas(JSON.parse(localStorage.getItem('favoritos')) ?? []);
+    }, 1)
 
+  }
 
- 
   return (
- 
-    <>
-      <div>Favoritosss</div>
-      <DeslizadorHorizontal peticionApi={obtenerPeliculasPorGenero(80,1)} ></DeslizadorHorizontal>
-  
-    </>
+    <div >
+      <header className='header'>
+        <HeaderMovil></HeaderMovil>
+      </header>
 
+      <article className='seccion-peliculas-favorito'>
+        <h2 className='titulo-peliculasFavorito'>Mis Películas Favoritas</h2>
+        <section className='seccion-peliculas-popular'>
+          {peliculasFavoritas.map(pelicula => (
+            <PerfilPelicula
+              key={pelicula.idPelicula}
+              idPelicula={pelicula.idPelicula}
+              escucharCheckFavorito={escucharCheckFavorito}
+              tituloPelicula={pelicula.tituloPelicula}
+              posterPelicula={pelicula.urlImagen}
+              fechaEstreno={pelicula.fechaEstreno} >
+
+            </PerfilPelicula>
+          ))}
+        </section>
+      </article>
+
+    </div>
   )
 }

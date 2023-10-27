@@ -17,7 +17,7 @@ export const Estrenos = () => {
         obtenerEstrenoCartelera()
             .then(respuesta => {
                 setDataEstrenos(respuesta);
-                console.log('estreno', respuesta)
+                console.log('****estreno', respuesta)
             })
             .catch(error => {
                 setError(error);
@@ -28,7 +28,7 @@ export const Estrenos = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3, // Número de elementos visibles en el carrusel
+        slidesToShow: 2, // Número de elementos visibles en el carrusel
         slidesToScroll: 1,
         responsive: [
             {
@@ -57,9 +57,8 @@ export const Estrenos = () => {
             <Slider {...settings}>
                 {dataEstrenos.results && dataEstrenos.results.slice(0, 4).map((estrenos, index) => (
                     <div className='item' key={index}>
-
                         <TarjetaEstreno
-                            imagen={'https://image.tmdb.org/t/p/original' + estrenos.poster_path}
+                            imagen={'https://image.tmdb.org/t/p/original' + estrenos.backdrop_path}
                         >
                         </TarjetaEstreno>
                     </div>

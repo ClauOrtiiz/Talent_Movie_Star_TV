@@ -8,15 +8,25 @@
     color: #FFBF69;
 }
 
-.article-tarjetaPelicula{
-    Width: 182.51px;
-    Height: 114.91px;
+.article-tarjetaPelicula {
+    Width: 180.51px;
+    Height: 162.91px;
     Left: 7px;
-    border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-flow: column;
     cursor: pointer;
     position: relative;
     justify-content: center;
-    }
+    gap: 5px;
+
+}
+
+.article-tarjetaPelicula img {
+    border-radius: 12px;
+}
+
+
+.nombre-pelicula-ranking {
+    font-size: 1rem;
+}

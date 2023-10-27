@@ -1,0 +1,12 @@
+.seccion-peliculas-favorito {
+    margin-top: 120px;
+    flex-flow: column;
+    align-items: start;
+    margin: 129px 33px 0px 2px;
+    overflow: hidden;
+}
+
+.titulo-peliculasFavorito{
+    margin-left: 25px;
+    margin-bottom: 22px;
+}
