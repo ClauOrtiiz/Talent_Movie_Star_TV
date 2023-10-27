@@ -60,8 +60,8 @@ export const DeslizadorHorizontal = ({ peticionApi }) => {
                     900: {
                         slidesPerView: 6,
                     },
-                    1024: {
-                        slidesPerView: 8,
+                    1100: {
+                        slidesPerView: 7,
                     },
                 }}
             >

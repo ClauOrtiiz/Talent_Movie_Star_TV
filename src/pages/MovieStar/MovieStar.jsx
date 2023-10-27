@@ -52,7 +52,6 @@ export const MovieStar = () => {
 
       <main className='main'>
         <article className='seccion-peliculas seccion-peliculas-estreno'>
-          <h2>ESTRENOS</h2>
           <section className='seccion-peliculas-estreno'>
             <Estrenos></Estrenos>
           </section>

@@ -1,58 +1,50 @@
-.section-icono-nav{
+.section-icono-nav {
     display: flex;
     align-items: center;
     font-size: 1.6rem;
     justify-content: space-between;
     padding: 12px;
-    background-color:#151515 ;
+    background-color: #151515;
     opacity: .9;
-  
-
-
 }
-.icono-nav{
+
+.icono-nav {
     color: white;
- 
-
 }
 
-.activo{
-    color:#D7A500;
-  
-  
+.activo {
+    color: #D7A500;
 }
 
 /* Estilos de navegador Encabezado*/
 
-.lista-nav{
+.lista-nav {
     list-style: none;
     display: flex;
     flex-flow: row;
     gap: 15px;
     justify-content: center;
-    background-color:#151515 ;
+    background-color: #151515;
     color: white;
     padding: 5px;
     text-decoration: none;
     opacity: .9;
     border: transparent;
-  
+
 }
 
-.lista-nav-header{
- 
+.lista-nav-header {
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
     color: white;
-    background-color:#151515 ;
- 
-}
-.lista-nav-header:hover{
-    color:#D7A500;
+    background-color: #151515;
+
 }
 
- 
-
+.lista-nav-header:hover {
+    color: #D7A500;
+}
