@@ -6,17 +6,17 @@
 }
 
 .input-label {
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .input-input {
     height: 45px;
     width: 100%;
-    padding: 0px 0px 0px 17px;
+    /* padding: 0px 0px 0px 0px; */
     border: none;
     border-bottom: 1px solid #9f9f9f;
     outline: 0px;
-    color: white;
+    color: rgb(255, 255, 255);
     background-color: transparent;
     font-size: 20px;
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Buscador } from '../../pages/ComponenteTest/Buscador/Buscador';
 import './navegador.css';
 
 
@@ -16,6 +17,13 @@ export const NavegadorMovil = () => {
     }
   };
 
+  //Función para el buscador
+
+  const [mostrarBuscador, setMostrarBuscador] = useState(false);
+  const toggleBuscador = () => {
+    setMostrarBuscador(!mostrarBuscador);
+  };
+
   return (
     <section className="section-icono-nav">
       <Link
@@ -23,22 +31,23 @@ export const NavegadorMovil = () => {
         onClick={() => cambiarIconoActivo('MovieStar')}
       >
         <img
-          src="../public/Iconos/home.png"
+          src="../public/Iconos/home2.png"
           alt="Icono MovieStar"
+          className='icon-nav icon-home'
         />
       </Link>
       <Link
-
-
         to="/pruebas/Peliculas"
         className='icon-nav'
         onClick={() => cambiarIconoActivo('Ingreso')}
       >
         <img
-          src="../public/Iconos/search.png"
+          src="../public/Iconos/search1.png"
           alt="Icono Ingreso"
           className='icon-nav'
+          onClick={toggleBuscador}
         />
+
       </Link>
       <Link
         to="/Reels"
@@ -46,7 +55,7 @@ export const NavegadorMovil = () => {
         onClick={() => cambiarIconoActivo('Reels')}
       >
         <img
-          src="../public/Iconos/playlist.png"
+          src="../public/Iconos/playlist1.png"
           alt="Icono Reels"
           className='icon-nav'
         />
@@ -57,7 +66,7 @@ export const NavegadorMovil = () => {
         onClick={() => cambiarIconoActivo('Favoritos')}
       >
         <img
-          src="../public/Iconos/hearth.png"
+          src="../public/Iconos/hearth1.png"
           alt="Icono Favoritos"
           className='icon-nav'
         />
