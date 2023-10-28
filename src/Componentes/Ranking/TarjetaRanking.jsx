@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './TarjetaRanking.css'
 
 export const TarjetaRanking = ({ nombre, numero, idPelicula, tituloPelicula, posterPelicula }) => {
@@ -9,15 +10,17 @@ export const TarjetaRanking = ({ nombre, numero, idPelicula, tituloPelicula, pos
     return (
         <section className='contenedor-tarjetaRanking'>
             <div>
-            <p className='numero-tarjeta'>{numero}</p>
+                <p className='numero-tarjeta'>{numero}</p>
             </div>
-            <article className='article-tarjetaPelicula' key={idPelicula}>
-                <img onClick={() => mostrarPelicula(idPelicula)} className="imgPelicula"
-                    src={`${urlImagen}${posterPelicula}`}
-                    alt={tituloPelicula}
-                />
-                <p className='nombre-pelicula-ranking'>{nombre}</p>
-            </article>
+            
+                <Link className='article-tarjetaPelicula' to={`/pruebas/pruebaDetalle/${idPelicula}`} >
+                    <img onClick={() => mostrarPelicula(idPelicula)} className="imgPelicula"
+                        src={`${urlImagen}${posterPelicula}`}
+                        alt={tituloPelicula}
+                    />
+                    <p className='nombre-pelicula-ranking'>{nombre}</p>
+                </Link>
+      
         </section>
 
     )

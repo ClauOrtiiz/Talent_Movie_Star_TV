@@ -1,23 +1,16 @@
+.contenedorGeneral-reparto {
+  display: flex;
+  flex-direction: column;
+  margin-top: 41px;
+  align-items: center;
+}
 
-  .reparto {
-   color: #0c0b0b;
-   
-    
-  }
-   
-   .titulo {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: aliceblue;
-  }  
-    .tarjetaPersonajes {
-      /* display:grid;
-      grid-template-columns: repeat(4, 1fr) */
-      display: flex;
-      flex-direction: row;
-      width: 100vw;
-      overflow-x: scroll
+.contenedor-reparto {
+  width: 88%;
+}
 
-  } 
- 
+.titulo-reparto {
+  margin-bottom: 30px;
+color: white;
+}
+

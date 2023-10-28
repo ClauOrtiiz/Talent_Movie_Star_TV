@@ -5,7 +5,7 @@ const TarjetaPersonaje = ({ nombreActor, nombrePersonaje, imagenPersonaje }) => 
     return (
         <div className="contenedor-tarjetaPersonaje" >
             <figure className="imgPersonaje">
-                <img src={imagenPersonaje}  width={'150px'} alt="ImagenPersonaje" />
+                <img src={imagenPersonaje}  width='150px' height='150px' alt="ImagenPersonaje" />
             </figure>
             <p
                 className="nombreActor"

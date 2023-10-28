@@ -1,6 +1,7 @@
 import React from 'react'
 import './HeaderMovil.css'
 import { NavegadorEncabezado } from '../Navegador/NavegadorEncabezado'
+import Logo from '../../../public/Iconos/logo.png'
 import { Buscador } from '../../pages/ComponenteTest/Buscador/Buscador'
 
 export const HeaderMovil = ({ perfil }) => {
@@ -9,7 +10,7 @@ export const HeaderMovil = ({ perfil }) => {
 
       <header className='header-movil'>
         <section className='seccion-elementos logo'>
-          <img src="../public/Iconos/logo.png" alt="MovieStar" />
+          <img src={Logo}alt="MovieStar" />
         </section>
         {/* <section>
           <Buscador></Buscador>
