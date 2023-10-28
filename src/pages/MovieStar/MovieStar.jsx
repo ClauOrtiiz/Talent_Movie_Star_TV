@@ -6,7 +6,9 @@ import { HeaderMovil } from '../../Componentes/Header/HeaderMovil'
 import { HeaderEscritorio } from '../../Componentes/Header/HeaderEscritorio'
 import { obtenerEstrenoCartelera } from '../../services/servicesProvider'
 import { obtenerPopulares } from '../../services/servicesProvider'
-import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/DeslizadorHorizontal'
+import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/Deslizadorhorizontal'
+import { Estrenos } from '../../Componentes/Estrenos/Estrenos'
+
 import '../pages.css'
 
 export const MovieStar = () => {
@@ -50,9 +52,8 @@ export const MovieStar = () => {
 
       <main className='main'>
         <article className='seccion-peliculas seccion-peliculas-estreno'>
-          <h2>ESTRENOS</h2>
           <section className='seccion-peliculas-estreno'>
-
+            <Estrenos></Estrenos>
           </section>
         </article>
 
@@ -60,15 +61,15 @@ export const MovieStar = () => {
           <h3>
             Seguir viendo
           </h3>
-          <section className='seccion-peliculas-seguir-viendo'>
-          <DeslizadorHorizontal peticionApi={obtenerEstrenoCartelera(2)} ></DeslizadorHorizontal>
+          <section className='seccion-deslizador'>
+            <DeslizadorHorizontal peticionApi={obtenerEstrenoCartelera(2)} ></DeslizadorHorizontal>
 
           </section>
         </article>
 
-        <article className='seccion-peliculas '>
-          <h2>Cartelera</h2>
-          <section>
+        <article className='seccion-peliculas '> {/*container*/}
+          <h2 className='seccion-peliculas-h2'>Cartelera</h2>
+          <section className='seccion-deslizador'> {/*swipercontainer*/}
             <DeslizadorHorizontal peticionApi={obtenerEstrenoCartelera(3)} ></DeslizadorHorizontal>
 
           </section>
@@ -76,7 +77,7 @@ export const MovieStar = () => {
 
 
         </article>
-        <article className='seccion-peliculas '>
+        <article className='seccion-peliculas'>
           <h2>Popular</h2>
           <section className='seccion-peliculas-popular'>
             {dataPopular.results && dataPopular.results.map((pelicula) => (
