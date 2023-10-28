@@ -1,0 +1,51 @@
+.contenedorGeneral {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+    align-items: center;
+}
+.contenedor-comentario{
+    width: 88%;
+}
+
+.titulo-comentario{
+    margin-bottom: 15px;
+    color: white;
+}
+.seccion-imgComentrio{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+.imgComentario img{
+    border-radius: 50%;
+    
+}
+
+.texto-comentario{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    color: white;
+}
+
+.contenedor-meGusta{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 15px 0 20px 0;
+}
+
+.seccion-nomegustas{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.seccion-megustas{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

@@ -1,11 +1,16 @@
-/* Estilo del contenedor flex */
+.contenedorGeneral-detallePelicula{
+  margin-top: 116px;
+}
+.contenedorGeneral{
+  margin-top: 5px;
+}
+
 .contenedor-flex {
   display: flex;
   background: #141414;
   color: white;
   font-family: Arial, sans-serif;
   text-align: center;
-  /* overflow-x: scroll */
 }
 
 .video {

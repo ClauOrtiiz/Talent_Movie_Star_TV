@@ -19,7 +19,8 @@
     position: relative;
     justify-content: center;
     gap: 5px;
-
+    text-decoration: none;
+    color:white;
 }
 
 .article-tarjetaPelicula img {
