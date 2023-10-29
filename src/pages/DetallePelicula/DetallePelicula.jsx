@@ -2,11 +2,15 @@ import Reparto from "../../Componentes/DetallePelicula/Reparto/Reparto";
 import React, { useEffect, useState } from "react";
 import { obtenerVideosPelicula } from "../../services/servicesProvider";
 import { Descripcion } from "../../Componentes/DetallePelicula/DescripcionPelicula/Descripcion";
+import { HeaderMovil } from "../../Componentes/Header/HeaderMovil";
+import { Comentario } from "../../Componentes/DetallePelicula/Comentarios/Comentario";
+import { VerAhora } from "../../Componentes/DetallePelicula/VerAhora/VerAhora";
 import { useParams } from 'react-router-dom';
 import "./Detalles.css";
+import '../pages.css'
 
 export const DetallePelicula = () => {
-  let {idPelicula} = useParams()
+  let { idPelicula } = useParams()
   idPelicula = idPelicula || 299054;
 
   const [video, setVideo] = useState(null);
@@ -21,28 +25,32 @@ export const DetallePelicula = () => {
       });
   }, []);
 
-    
+
 
   return (
-    <div className="video-container">
-      
-      {video && (
-       
-        <iframe
-          width="100%"
-          height="400"
-          src ={`https://www.youtube.com/embed/${video.key}?si=aVicG-IXOHeD7NaU`}
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      )}
-       
+    <article className="video-container">
+      <header className='header'>
+        <HeaderMovil></HeaderMovil>
+      </header>
+
+      <section className="contenedorGeneral-detallePelicula">
+        {video && (
+          <iframe
+            width="100%"
+            height="400"
+            src={`https://www.youtube.com/embed/${video.key}?si=aVicG-IXOHeD7NaU`}
+            title="YouTube video player"
+            frameborder="0px"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          // allowfullscreen
+          ></iframe>
+        )}
+        <VerAhora></VerAhora>
         <Descripcion idPeli={idPelicula}></Descripcion>
         <Reparto idPelicula={idPelicula}></Reparto>
-        
-       
-    </div>
-        );
+        <Comentario></Comentario>
+      </section>
+    </article>
+
+  );
 };

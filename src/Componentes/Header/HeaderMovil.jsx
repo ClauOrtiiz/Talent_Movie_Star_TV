@@ -4,7 +4,7 @@ import { NavegadorEncabezado } from '../Navegador/NavegadorEncabezado'
 import { useState, useEffect, useRef } from 'react'
 import { Buscador } from '../../pages/ComponenteTest/Buscador/Buscador'
 import { Link } from 'react-router-dom'
-
+import Logo from '../../../public/Iconos/logo.png'
 export const HeaderMovil = () => {
 
   // Extraccion de nombre de usuario
@@ -50,7 +50,7 @@ export const HeaderMovil = () => {
 
       <header className='header-movil'>
         <section className='seccion-elementos logo'>
-          <img src="../public/Iconos/logo.png" alt="MovieStar" />
+          <img src={Logo}alt="MovieStar" />
         </section>
 
         <section className='seccion-icono-perfil'>

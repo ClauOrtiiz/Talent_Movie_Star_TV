@@ -27,14 +27,7 @@ export const Ranking = () => {
     return (
 
 
-        // <section className='seccion-tarjetaRanking'>
-
-        //     {dataRanking.results && dataRanking.results.slice(0, 10).map((ranking, index) => (
-
-        //     ))}
-        // </section>
         <Swiper
-            // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={20}
             slidesPerView={2}
