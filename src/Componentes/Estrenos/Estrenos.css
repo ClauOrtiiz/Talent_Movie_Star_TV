@@ -1,29 +1,37 @@
-.contenedor-estreno {
-    margin-bottom: 62px;
-
-}
-
+ 
 .title-estreno {
-    font-size: 1.125rem;
-    margin: 0 0 10px 20px;
+     
+    color: rgba(211, 211, 211, 0.938);
+    font-size: 17px;
+    text-shadow: 0px 2px 15px rgba(110, 110, 107, 0.514);
+    font-weight: 800;
 }
 
 .seccion-imgEstreno {
     align-items: unset !important;
-    height: 239px;
-
+    width: 250px;
+    height: 210px;
+   
 }
 
 @media(min-width: 468px) {
     .seccion-imgEstreno {
         align-items: unset !important;
-        height: 219px;
+        width:400px;
+        height:200px;
     }
 }
 
-@media(min-width: 1025px) {
+@media(min-width: 800px) {
     .seccion-imgEstreno {
         align-items: unset !important;
-        height: 366px;
+        width:450px;
+        height: 320px;
+        
+    }
+    .title-estreno{
+        font-size: 20px;
+        text-shadow: 0px 2px 15px rgba(110, 110, 107, 0.514);
+        font-weight: 800;
     }
 }

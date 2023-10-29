@@ -97,7 +97,6 @@ export const Categoria = () => {
 
             <main className='main'>
                 
-
                 <article >
                     <h2 className='title-estreno'>Ranking del mes</h2>
                     <section className='seccion-peliculas seccion-peliculas-cartelera'>
@@ -106,7 +105,7 @@ export const Categoria = () => {
                 </article>
 
                 {generos && generos.map((genero, index) => (
-                    <article key={index}>
+                    <article className='article-categorias' key={index}>
                         <div className='texto-title'>
                             <h2 className='title-estreno'>{genero.name}</h2>
                             <p className='title-verMas' >Ver más</p>

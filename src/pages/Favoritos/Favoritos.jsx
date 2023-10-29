@@ -21,7 +21,7 @@ export const Favoritos = () => {
       </header>
 
       <article className='seccion-peliculas-favorito'>
-        <h2 className='titulo-peliculasFavorito'>Mis Películas Favoritas</h2>
+        <h2 className='titulo-peliculasFavorito'>Mis favoritos</h2>
         <section className='seccion-peliculas-popular'>
           {peliculasFavoritas.map(pelicula => (
             <PerfilPelicula

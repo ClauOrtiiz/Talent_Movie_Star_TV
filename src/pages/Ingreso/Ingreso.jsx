@@ -18,15 +18,23 @@ export const Ingreso = () => {
 
     }
     return (
-        <section className='ingreso-contenedor'>
-            <Logo></Logo>
-            <FormularioIngreso
-                email={email}
-                password={password}
-                setEmail={setEmail}
-                setPassword={setPassword}
-                clickIngreso={clickIngreso} ></FormularioIngreso>
-        </section>
+        <article className='ingreso-contenedor'>
+            <img className='ingreso-contenedor-imagen' src="../public/fondos/fondo2.jpg" alt="" />
+            <section className='ingreso-contenedor-formulario'  >
+                <Logo className='item-ingreso logo-ingreso' ></Logo>
+                <FormularioIngreso
+                    email={email}
+                    password={password}
+                    setEmail={setEmail}
+                    setPassword={setPassword}
+                    clickIngreso={clickIngreso}
+                    className='item-ingreso formulario'
+
+                ></FormularioIngreso>
+            </section>
+
+
+        </article>
 
     );
 };
