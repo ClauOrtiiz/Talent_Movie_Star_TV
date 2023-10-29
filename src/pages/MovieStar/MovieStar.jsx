@@ -14,8 +14,23 @@ import '../pages.css'
 export const MovieStar = () => {
 
   //Funcion para extraccion de cartelera
-  const [dataCartelera, setDataCartelera] = useState([]);
 
+  const argumentosPopulares = [1, 2, 3, 4, 5, 6, 7, 8];
+  const [dataPopulares, setDataPopulares] = useState([]);
+  const [error, setError] = useState(null);
+
+  // useEffect(() => {
+  //   const requests = argumentosPopulares.map((arg) => obtenerPopulares(arg));
+
+  //   Promise.all(requests)
+  //     .then((results) => {
+  //       setDataPopulares(results);
+  //       console.log('Resultados de obtenerPopulares:', results);
+  //     })
+  //     .catch((error) => {
+  //       setError(error);
+  //     });
+  // }, [argumentosPopulares]);
 
   useEffect(() => {
     obtenerEstrenoCartelera()
@@ -29,9 +44,9 @@ export const MovieStar = () => {
   }, [])
 
 
-  //Funcion extraccion de populares
+  // Funcion extraccion de populares
   const [dataPopular, setDataPopular] = useState([]);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     obtenerPopulares()
@@ -51,14 +66,17 @@ export const MovieStar = () => {
       </header>
 
       <main className='main'>
-        <article className='seccion-peliculas seccion-peliculas-estreno'>
+        <article className='seccion-peliculas  '>
           <section className='seccion-peliculas-estreno'>
             <Estrenos></Estrenos>
+            <h3 className='seccion-peliculas-h2'>
+              Estreno
+            </h3>
           </section>
         </article>
 
         <article className='seccion-peliculas'>
-          <h3>
+          <h3 className='seccion-peliculas-h2'>
             Seguir viendo
           </h3>
           <section className='seccion-deslizador'>
@@ -71,15 +89,25 @@ export const MovieStar = () => {
           <h2 className='seccion-peliculas-h2'>Cartelera</h2>
           <section className='seccion-deslizador'> {/*swipercontainer*/}
             <DeslizadorHorizontal peticionApi={obtenerEstrenoCartelera(3)} ></DeslizadorHorizontal>
-
           </section>
 
-
-
         </article>
+
         <article className='seccion-peliculas'>
-          <h2>Popular</h2>
+          <h2 className='seccion-peliculas-h2'>Popular</h2>
           <section className='seccion-peliculas-popular'>
+            {/* {dataPopulares.flatMap((data) => {
+            return data.results.map((pelicula) => (
+              <PerfilPelicula
+                key={pelicula.id}
+                idPelicula={pelicula.id}
+                tituloPelicula={pelicula.original_title}
+                posterPelicula={pelicula.poster_path}
+                fechaEstreno={pelicula.release_date}
+              ></PerfilPelicula>
+            ));
+          })} */}
+
             {dataPopular.results && dataPopular.results.map((pelicula) => (
 
               <PerfilPelicula key={pelicula.id} idPelicula={pelicula.id} tituloPelicula={pelicula.original_title} posterPelicula={pelicula.poster_path} fechaEstreno={pelicula.release_date} ></PerfilPelicula>

@@ -14,6 +14,7 @@ const FormularioIngreso = ({ setEmail, setPassword, errorMessage, clickIngreso, 
                     typeInp='text'
                     value={email}
                     textId='email'
+                     
                 />
                 <button className="btn-ingresar" onClick={clickIngreso} data-testid='button-login' > Ingresar</button>
             </form>

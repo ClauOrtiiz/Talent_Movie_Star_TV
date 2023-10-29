@@ -1,12 +1,25 @@
 .seccion-peliculas-favorito {
     margin-top: 120px;
+    display: flex;
     flex-flow: column;
-    align-items: start;
-    margin: 129px 33px 0px 2px;
+    justify-content: center;
+    padding: 5%;
     overflow: hidden;
+    gap: 20px;
+ 
 }
 
-.titulo-peliculasFavorito{
-    margin-left: 25px;
-    margin-bottom: 22px;
+.titulo-peliculasFavorito {
+    color: rgba(219, 175, 78, 0.938);
+    font-size: 25px;
+    text-shadow: 1px 2px 10px rgba(88, 86, 86, 0.5);
+    font-weight: 800;
+}
+
+.seccion-peliculas-popular {
+
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
 }

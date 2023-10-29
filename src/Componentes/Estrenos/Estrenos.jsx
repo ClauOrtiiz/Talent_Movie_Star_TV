@@ -32,9 +32,9 @@ export const Estrenos = () => {
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 900,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 1,
                     infinite: true,
                     dots: true
@@ -47,13 +47,14 @@ export const Estrenos = () => {
                     slidesToScroll: 1,
                     initialSlide: 1
                 }
-            }
+            },
+            
         ]
     };
 
     return (
         <section className='contenedor-estreno'>
-            <h2 className='title-estreno'> Estrenos</h2>
+      
             <Slider {...settings}>
                 {dataEstrenos.results && dataEstrenos.results.slice(0, 4).map((estrenos, index) => (
                     <div className='item' key={index}>

@@ -3,28 +3,139 @@
     width: 100%;
     flex-flow: row;
     justify-content: space-between;
-    background-color:#151515  ;
+    align-items: center;
+    background-color: #151515;
     gap: 5px;
-    padding: 15px;
+    /* padding: 20px;
+    padding-bottom: 10px; */
     opacity: .9;
- }
+    border: transparent;
+   
+}
 
- 
+
 .logo img {
-    width: 100px;
-
+    width: 110px;
 }
 
 .perfil {
     display: flex;
-    width: 50px;
-    height: 50px;
-    border: 2px solid rgb(255, 255, 255);
+    min-width: 50px;
+    min-height: 50px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(255, 242, 202, 0.493);
     border-radius: 25px;
     font-size: 10px;
     font-weight: 100;
     justify-content: center;
     align-items: center;
     color: white;
-  
+    padding: 4px;
+    border-radius: 50%;
+    background: linear-gradient(60deg, #e2ad0d63, #3f89eb56);
+    box-shadow: 0px 0px 15px 0px rgba(255, 242, 202, 0.493);
+
+}
+
+.seccion-icono-escritorio {
+    cursor: pointer;
+    width: 500px;
+    height: 35px;
+    display: flex;
+    justify-content: end;
+    z-index: 1000;
+}
+
+.article-buscador-perfil {
+    width: 100px;
+    height: 150px;
+    gap: 15px;
+    z-index: 900;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: end;
+    gap: 50px;
+    z-index: 500;
+
+
+}
+
+.buscador-escritorio {
+    width: 100%;
+    height: 100%;
+
+}
+
+.icono-playlist-escritorio,
+.icono-search-escritorio {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    z-index: 500;
+
+}
+
+.seccion-icono-perfil {
+    display: flex;
+    flex-flow: row;
+    justify-content: end;
+    align-items: center;
+    gap: 40px;
+
+}
+
+
+@media(max-width:900px) {
+    .article-buscador-perfil {
+        display: none;
+    }
+
+
+}
+
+@media(min-width: 800px) {
+    .article-buscador-perfil {
+        width: 600px;
+        height: 150px;
+    }
+
+    .icono-playlist-escritorio,
+    .icono-search-escritorio {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .perfil {
+        width: 80px;
+        height: 80px;
+        font-size: 15px;
+        font-weight: 100;
+        border-radius: 50%;
+    }
+
+    .logo img {
+        width: 180px;
+
+    }
+
+    .header-movil {
+        padding: 0px 50px 0px 50px;
+        z-index: 1000;
+
+    }
+}
+
+@media(max-width: 850px) {
+    .article-buscador-perfil {
+        min-width: 400px;
+        padding: 15px 50px 15px 50px;
+    }
+
+    .header-movil {
+        padding: 15px 30px 15px 30px;
+
+    }
 }
