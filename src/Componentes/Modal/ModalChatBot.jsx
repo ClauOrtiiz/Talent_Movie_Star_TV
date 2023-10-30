@@ -19,16 +19,22 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
             className='seccion-modal'
         >
             <section className='seccion-input'>
+
                 <section className='seccion-enviar'>
                     <h2>Hola Cinéfilo, ingrese su consulta aqui </h2>
-                      <button>Enviar</button>
+                    <button onClick={closeModal} className='close-modal'>X</button>
                 </section>
                 <textarea className='textarea-pregunta' placeholder='Ingrese su pregunta...' />
-              
-                <p></p>
+                <button className='button-enviar'>Enviar</button>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, consectetur delectus ob
+                    caecati animi, incidunt atque excepturi deserunt consequuntur rerum quaerat debitis quod ducimus
+                    . Sit doloribus hic perspiciatis quos quod ipsum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, consectetur delectus ob
+                    caecati animi, incidunt atque excepturi deserunt consequuntur rerum quaerat debitis quod ducimus
+                    . Sit doloribus hic perspic excepturi deserunt consequuntur rerum quaerat debitis quod ducimus
+                    . Sit doloribus hic perspiciatis quos quod ipsum</p>
             </section>
 
-            <button onClick={closeModal} className='close-modal'>X</button>
+
         </Modal >
 
 
