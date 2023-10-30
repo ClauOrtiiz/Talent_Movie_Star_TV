@@ -1,5 +1,5 @@
 import React from 'react'
-
+import hearth from '../../assets/hearth.png'
 export const DetallePelicula = (idPelicula) => {
     console.log('viendo', idPelicula)
 
@@ -15,10 +15,10 @@ export const DetallePelicula = (idPelicula) => {
             <h1>{item.title}</h1>
             <section>
                 <div>
-                    <img src="../public/Iconos/hearth.png"/>
+                    <img src={hearth}/>
                     <h3>Ver ahora</h3>
                 </div>
-                <img src="../public/Iconos/hearth.png" />
+                <img src={hearth} />
             </section>
             <section>{}</section>
 

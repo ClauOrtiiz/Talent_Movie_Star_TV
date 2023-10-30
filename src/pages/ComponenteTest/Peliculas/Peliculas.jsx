@@ -32,7 +32,7 @@ export const Peliculas = () => {
   return (
 
     <body className='body'>
-      <header className='headerContenedor'>
+      <header className='headerContenedor-buscador'>
         {/* <Link to={"/Reels"} className="block px-4 py-2 hover:bg-gray-100 ">Reel </Link> */}
       <Buscador/>
       </header>

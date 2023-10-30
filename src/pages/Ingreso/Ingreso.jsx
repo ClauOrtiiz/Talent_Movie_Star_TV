@@ -3,7 +3,7 @@ import { useState } from 'react';
 import "./Ingreso.css"
 import Logo from '../../Componentes/Ingreso/logo/logo';
 import FormularioIngreso from '../../Componentes/Ingreso/Formulario/FormularioIngreso';
-
+import fondo from '../../assets/fondo2.jpg'
 
 export const Ingreso = () => {
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ export const Ingreso = () => {
     }
     return (
         <article className='ingreso-contenedor'>
-            <img className='ingreso-contenedor-imagen' src="../public/fondos/fondo2.jpg" alt="" />
+            <img className='ingreso-contenedor-imagen' src={fondo} alt="" />
             <section className='ingreso-contenedor-formulario'  >
                 <Logo className='item-ingreso logo-ingreso' ></Logo>
                 <FormularioIngreso

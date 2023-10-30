@@ -15,10 +15,10 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
     const [ultimaPregunta, setUltimaPregunta] = useState('Hola Cinéfilo, ingrese su consulta aqui');
     async function llamarAchatGpt(mensage) {
         setBloquearEnvio(true); // Bloquea el envío
-        setRespuestaChatBot("Un momento porfavor ....")
+        setRespuestaChatBot("Un momento por favor ....")
         setUltimaPregunta(`Tu pregunta: ${mensage}`)
         const misdatos = { pregunta: mensage }
-        const respuesta = await fetch('https://4qc5jf9r-3100.brs.devtunnels.ms/api/miOpenAI', {
+        const respuesta = await fetch('https://yesica-chui-chalco.xyz/app3/api/miOpenAI', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -51,6 +51,10 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
     const handleEnviarClick = () => {
         if (!bloquearEnvio) {
             const message = textareaRef.current.value;
+            if (message.trim() === "") {
+                setRespuestaChatBot("Por favor, ingrese una pregunta.")
+                return
+            }
             console.log('Texto en el textarea:', message);
             textareaRef.current.value = ""
             llamarAchatGpt(message);
@@ -70,27 +74,31 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
             className='seccion-modal'
         >
             <section className='seccion-input'>
-                <section className='seccion-enviar'>
-                    <h2>{ultimaPregunta}</h2>
-                    <button
+                <button onClick={() => {
+                    closeModal();
+                    reiniciarUltimaPregunta(); // Reiniciar ultimaPregunta
+                }} className='close-modal'>X</button>
+                <section className='seccion-title'>
+                    <h3>{ultimaPregunta}</h3>
+                </section>
+
+                <textarea  maxLength="200" disabled={bloquearEnvio} ref={textareaRef} className='textarea-pregunta' placeholder='Ingrese su pregunta...' onKeyUp={handleKeyPress} />
+                <section >
+                    <button  
                         style={!bloquearEnvio ? {} : {
-                            backgroundColor: 'gray',
-                            color: '#999',
+                            backgroundColor: ' rgba(235, 201, 89, 0.76)',
+                            color: '#fff',
                             cursor: 'not-allowed',
+                            
                             /* Otros estilos normales aquí */
                         }}
-                        onClick={handleEnviarClick} disabled={bloquearEnvio}>Enviar</button>
+                        onClick={handleEnviarClick} disabled={bloquearEnvio} className='button-enviar'>Enviar</button>
                 </section>
-                <textarea disabled={bloquearEnvio} ref={textareaRef} className='textarea-pregunta' placeholder='Ingrese su pregunta...' onKeyUp={handleKeyPress} />
 
                 <p>{respuestaChatBot}</p>
             </section>
 
-            <button onClick={() => {
-                closeModal();
-                reiniciarUltimaPregunta(); // Reiniciar ultimaPregunta
-                
-            }} className='close-modal'>X</button>
+
         </Modal >
 
 
