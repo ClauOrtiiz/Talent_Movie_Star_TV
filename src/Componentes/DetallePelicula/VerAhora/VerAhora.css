@@ -13,17 +13,18 @@
 
 .btn-play {
     background-color: #F6A63B;
-    padding: 15px;
-    width: 43%;
-    max-width: 153px;
-    border-radius: 8px;
+    padding: 12px;
+    width: 60%;
+    max-width: 140px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 17px;
     color: white;
-    font-size:  16px;
-    border-bottom: none;
+    font-size:  14px;
+    border: none;
+    
 }
 
 .contenedor-descargar {
@@ -31,4 +32,21 @@
     align-items: center;
     justify-content: flex-end;
     gap: 10px;
+}
+@media(min-width:800px){
+    .btn-play {
+        background-color: #F6A63B;
+        padding: 15px;
+        width: 43%;
+        max-width: 160px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 17px;
+        color: white;
+        font-size:  16px;
+        border: none;
+        
+    } 
 }
