@@ -22,7 +22,7 @@ export const MovieStar = () => {
         console.log('populares', cartelera)
       })
       .catch(error => {
-        setError(error);
+        console.log(error);
       })
   }, [])
 
@@ -39,7 +39,7 @@ export const MovieStar = () => {
         console.log('viendoo', popular)
       })
       .catch(error => {
-        setError(error);
+        console.log(error);
       })
   }, [])
 
@@ -53,7 +53,7 @@ export const MovieStar = () => {
         console.log('populares', cartelera)
       })
       .catch(error => {
-        setError(error);
+        console.log(error);
       })
   }, [])
 
@@ -66,7 +66,7 @@ export const MovieStar = () => {
         console.log('populares', cartelera)
       })
       .catch(error => {
-        setError(error);
+        console.log(error);
       })
   }, [])
 
