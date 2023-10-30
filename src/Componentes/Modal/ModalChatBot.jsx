@@ -82,7 +82,7 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
                     <h3>{ultimaPregunta}</h3>
                 </section>
 
-                <textarea  maxlength="200" disabled={bloquearEnvio} ref={textareaRef} className='textarea-pregunta' placeholder='Ingrese su pregunta...' onKeyUp={handleKeyPress} />
+                <textarea  maxLength="200" disabled={bloquearEnvio} ref={textareaRef} className='textarea-pregunta' placeholder='Ingrese su pregunta...' onKeyUp={handleKeyPress} />
                 <section >
                     <button  
                         style={!bloquearEnvio ? {} : {

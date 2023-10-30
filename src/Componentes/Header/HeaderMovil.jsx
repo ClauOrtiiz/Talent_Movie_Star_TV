@@ -1,5 +1,5 @@
 import React from 'react'
-import './HeaderMovil.css'
+import './headerMovil.css'
 import { NavegadorEncabezado } from '../Navegador/NavegadorEncabezado'
 import { useState, useEffect, useRef } from 'react'
 import { Buscador } from '../../pages/ComponenteTest/Buscador/Buscador'
