@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { HeaderMovil } from '../../Componentes/Header/HeaderMovil'
 import { PerfilPelicula } from '../../Componentes/PerfilPelicula/PerfilPelicula';
+import { NavegadorMovil } from '../../Componentes/Navegador/NavegadorMovil';
 import './Favoritos.css'
 
 export const Favoritos = () => {
@@ -21,7 +22,7 @@ export const Favoritos = () => {
       </header>
 
       <article className='seccion-peliculas-favorito'>
-        <h2 className='titulo-peliculasFavorito'>Mis Películas Favoritas</h2>
+        <h2 className='titulo-peliculasFavorito'>Mis favoritos</h2>
         <section className='seccion-peliculas-popular'>
           {peliculasFavoritas.map(pelicula => (
             <PerfilPelicula
@@ -36,6 +37,9 @@ export const Favoritos = () => {
           ))}
         </section>
       </article>
+      <footer className='footer-movil'>
+        <NavegadorMovil></NavegadorMovil>
+      </footer>
 
     </div>
   )

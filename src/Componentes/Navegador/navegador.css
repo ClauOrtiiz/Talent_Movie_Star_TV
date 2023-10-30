@@ -1,15 +1,26 @@
 .section-icono-nav {
+    width: 100%;
     display: flex;
     align-items: center;
-    font-size: 1.6rem;
     justify-content: space-between;
-    padding: 12px;
+    padding: 5px 30px 5px 30px;
     background-color: #151515;
     opacity: .9;
+
+
+
 }
 
-.icono-nav {
-    color: white;
+.icon-nav {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+}
+
+.icon-home {
+    width: 35px;
+    height: 35px;
 }
 
 .activo {
@@ -30,6 +41,7 @@
     text-decoration: none;
     opacity: .9;
     border: transparent;
+    z-index: 0;
 
 }
 
@@ -40,11 +52,61 @@
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
-    color: white;
-    background-color: #151515;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 25px rgba(255, 255, 255, 0.952);
 
 }
 
 .lista-nav-header:hover {
     color: #D7A500;
+}
+
+.icon-nav:hover {
+    filter: hue-rotate(360deg);
+
+}
+
+.container-icon {
+    width: 100%;
+    height: 100%;
+ 
+
+}
+
+.container-icon img {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+}
+
+@media(max-width:350px) {
+    .section-icono-nav {
+        padding: 5px 15px 5px 15px;
+    }
+
+    .container-icon img {
+        width: 20px;
+        height: 20px;
+        padding: 20px;
+    }
+}
+ 
+@media(min-width:800px) {
+    .lista-nav {
+        gap: 100px;
+        justify-content: center;
+        padding: 7px;
+    }
+
+    .lista-nav-header {
+        font-size: 18px;
+        font-weight: 600;
+
+    }
+
+    .section-icono-nav {
+        padding: 5px 30px 5px 30px;
+    }
+
+
 }

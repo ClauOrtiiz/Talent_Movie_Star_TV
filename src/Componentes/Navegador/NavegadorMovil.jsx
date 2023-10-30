@@ -1,10 +1,19 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Buscador } from '../../pages/ComponenteTest/Buscador/Buscador';
+import home2 from '../../../public/Iconos/home2.png'
+import search1 from '../../../public/Iconos/search1.png'
+import playlist1 from '../../../public/Iconos/playlist1.png'
+import hearth1 from '../../../public/Iconos/hearth1.png'
+import chatBot from '../../../public/Iconos/chatBot.png'
+import { ModalChatBot } from '../Modal/ModalChatBot';
+import { ModalChatBotIcon } from '../Modal/ModalChatBotIcon';
 import './navegador.css';
 
 
 export const NavegadorMovil = () => {
   const location = useLocation();
+
   const [iconActivo, setIconActivo] = useState(null);
 
   // Función para cambiar el icono activo
@@ -16,52 +25,97 @@ export const NavegadorMovil = () => {
     }
   };
 
+  //Función para el buscador
+
+  const [mostrarBuscador, setMostrarBuscador] = useState(false);
+  const toggleBuscador = () => {
+    setMostrarBuscador(!mostrarBuscador);
+  };
+
+
+  // //Funcion para modal
+  // const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  // const abrirModal = () => {
+  //   setModalIsOpen(true);
+  // };
+
+  // const cerrarModal = () => {
+  //   setModalIsOpen(false);
+  // };
+
+
   return (
     <section className="section-icono-nav">
       <Link
         to="/MovieStar"
         onClick={() => cambiarIconoActivo('MovieStar')}
       >
-        <img
-          src="../public/Iconos/home.png"
-          alt="Icono MovieStar"
-        />
+        <div className='container-icon' >
+
+          <img
+            src={home2}
+            alt="Icono MovieStar"
+
+          />
+
+
+        </div>
       </Link>
       <Link
-
-
         to="/pruebas/Peliculas"
-        className='icon-nav'
         onClick={() => cambiarIconoActivo('Ingreso')}
       >
-        <img
-          src="../public/Iconos/search.png"
-          alt="Icono Ingreso"
-          className='icon-nav'
-        />
+        <div className='container-icon'>
+
+          <img
+            src={search1}
+            alt="Icono Ingreso"
+            onClick={toggleBuscador}
+          />
+
+
+        </div>
       </Link>
       <Link
         to="/Reels"
-        className='icon-nav'
         onClick={() => cambiarIconoActivo('Reels')}
       >
-        <img
-          src="../public/Iconos/playlist.png"
-          alt="Icono Reels"
-          className='icon-nav'
-        />
+        <div className='container-icon' >
+
+          <img
+            src={playlist1}
+            alt="Icono Reels"
+          />
+
+        </div>
       </Link>
-      <Link
+      {/* <Link
         to="/Favoritos"
         className={`nav-link ${location.pathname === '/Favoritos' || iconActivo === 'Favoritos' ? 'activo' : ''}`}
         onClick={() => cambiarIconoActivo('Favoritos')}
       >
         <img
-          src="../public/Iconos/hearth.png"
+          src={hearth1}
           alt="Icono Favoritos"
           className='icon-nav'
         />
+      </Link> */}
+      {/* <img
+          src={chatBot}
+          alt="Icono Favoritos"
+          className='icon-nav'
+          onClick={abrirModal}
+        />
+        <ModalChatBot isOpen={modalIsOpen} closeModal={cerrarModal}></ModalChatBot> */}
+      <Link>
+        <div className='container-icon'>
+          <ModalChatBotIcon></ModalChatBotIcon>
+        </div>
       </Link>
+
+
+
     </section>
   );
 };

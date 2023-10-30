@@ -5,4 +5,13 @@
     object-fit: cover;
     align-items: flex-start;
     justify-content: center;
+    position: relative;
+ 
+}
+.seccion-imgEstreno h3{
+    position: absolute;
+    color: rgb(238, 238, 238);
+    font-weight: 100;
+    font-size: 18px;
+
 }

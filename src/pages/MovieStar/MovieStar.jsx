@@ -14,13 +14,11 @@ import '../pages.css'
 export const MovieStar = () => {
 
   //Funcion para extraccion de cartelera
-  const [dataCartelera, setDataCartelera] = useState([]);
-
 
   useEffect(() => {
-    obtenerEstrenoCartelera()
+    obtenerEstrenoCartelera(2)
       .then(cartelera => {
-        setDataCartelera(cartelera);
+        setDataPopulares(cartelera);
         console.log('populares', cartelera)
       })
       .catch(error => {
@@ -29,15 +27,43 @@ export const MovieStar = () => {
   }, [])
 
 
-  //Funcion extraccion de populares
+
+  // Funcion extraccion de populares
   const [dataPopular, setDataPopular] = useState([]);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     obtenerPopulares()
       .then(popular => {
         setDataPopular(popular);
         console.log('viendoo', popular)
+      })
+      .catch(error => {
+        setError(error);
+      })
+  }, [])
+
+  const [dataPopular2, setDataPopular2] = useState([]);
+
+
+  useEffect(() => {
+    obtenerPopulares(2)
+      .then(cartelera => {
+        setDataPopular2(cartelera);
+        console.log('populares', cartelera)
+      })
+      .catch(error => {
+        setError(error);
+      })
+  }, [])
+
+  const [dataPopular3, setDataPopular3] = useState([]);
+
+  useEffect(() => {
+    obtenerPopulares(3)
+      .then(cartelera => {
+        setDataPopular3(cartelera);
+        console.log('populares', cartelera)
       })
       .catch(error => {
         setError(error);
@@ -51,14 +77,17 @@ export const MovieStar = () => {
       </header>
 
       <main className='main'>
-        <article className='seccion-peliculas seccion-peliculas-estreno'>
+        <article className='seccion-peliculas  '>
           <section className='seccion-peliculas-estreno'>
             <Estrenos></Estrenos>
+            <h3 className='seccion-peliculas-h2'>
+              Estreno
+            </h3>
           </section>
         </article>
 
         <article className='seccion-peliculas'>
-          <h3>
+          <h3 className='seccion-peliculas-h2'>
             Seguir viendo
           </h3>
           <section className='seccion-deslizador'>
@@ -71,16 +100,27 @@ export const MovieStar = () => {
           <h2 className='seccion-peliculas-h2'>Cartelera</h2>
           <section className='seccion-deslizador'> {/*swipercontainer*/}
             <DeslizadorHorizontal peticionApi={obtenerEstrenoCartelera(3)} ></DeslizadorHorizontal>
-
           </section>
 
-
-
         </article>
+
         <article className='seccion-peliculas'>
-          <h2>Popular</h2>
+          <h2 className='seccion-peliculas-h2'>Popular</h2>
           <section className='seccion-peliculas-popular'>
+
             {dataPopular.results && dataPopular.results.map((pelicula) => (
+
+              <PerfilPelicula key={pelicula.id} idPelicula={pelicula.id} tituloPelicula={pelicula.original_title} posterPelicula={pelicula.poster_path} fechaEstreno={pelicula.release_date} ></PerfilPelicula>
+
+            ))}
+
+            {dataPopular2.results && dataPopular2.results.map((pelicula) => (
+
+              <PerfilPelicula key={pelicula.id} idPelicula={pelicula.id} tituloPelicula={pelicula.original_title} posterPelicula={pelicula.poster_path} fechaEstreno={pelicula.release_date} ></PerfilPelicula>
+
+            ))}
+
+            {dataPopular3.results && dataPopular3.results.map((pelicula) => (
 
               <PerfilPelicula key={pelicula.id} idPelicula={pelicula.id} tituloPelicula={pelicula.original_title} posterPelicula={pelicula.poster_path} fechaEstreno={pelicula.release_date} ></PerfilPelicula>
 

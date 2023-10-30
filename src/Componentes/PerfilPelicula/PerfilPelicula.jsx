@@ -23,8 +23,8 @@ export const PerfilPelicula = ({ idPelicula, tituloPelicula, posterPelicula, fec
       favoritos = [];
     }
 
-    const pelicula = favoritos?.find(x => x.idPelicula === idPelicula);
 
+    const pelicula = favoritos?.find(x => x.idPelicula === idPelicula);
 
     if (pelicula) {
       localStorage.setItem('favoritos', JSON.stringify(favoritos?.filter(x => x.idPelicula !== idPelicula)));
@@ -48,7 +48,7 @@ export const PerfilPelicula = ({ idPelicula, tituloPelicula, posterPelicula, fec
   return (
 
 
-    <article className='article-pelicula'  key={idPelicula}>
+    <article className='article-pelicula' key={idPelicula}>
 
       <section className='seccion-favorito' onClick={clickFavorito} >
         {meGusta ?
