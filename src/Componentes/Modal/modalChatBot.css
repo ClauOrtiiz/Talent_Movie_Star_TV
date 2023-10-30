@@ -136,3 +136,25 @@
    
 
  }
+
+/* CSS */
+.button-enviar {
+    /* Estilo normal */
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  
+    /* Estilo cuando está deshabilitado */
+    &[disabled] {
+      background-color: gray;
+      color: #999;
+      cursor: not-allowed;
+    }
+  
+    /* Estilo al pasar el ratón sobre el botón (hover) */
+    &:not([disabled]):hover {
+      background-color: #0056b3;
+    }
+  }
+  
+ 
