@@ -12,6 +12,7 @@ export const Reels = () => {
   const [peliculasCargadas,setPeliculasCargadas] =useState([])
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
   const [meGusta, setmeGusta] = useState(false);
+  const urlImagen = 'https://image.tmdb.org/t/p/w500';
   let videoPaused = false;
 
   const clickFavorito = (idPelicula) => {
