@@ -15,7 +15,7 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
     const [ultimaPregunta, setUltimaPregunta] = useState('Hola Cinéfilo, ingrese su consulta aqui');
     async function llamarAchatGpt(mensage) {
         setBloquearEnvio(true); // Bloquea el envío
-        setRespuestaChatBot("Un momento porfavor ....")
+        setRespuestaChatBot("Un momento por favor ....")
         setUltimaPregunta(`Tu pregunta: ${mensage}`)
         const misdatos = { pregunta: mensage }
         const respuesta = await fetch('https://yesica-chui-chalco.xyz/app3/api/miOpenAI', {

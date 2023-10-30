@@ -10,7 +10,7 @@ const FormularioIngreso = ({ setEmail, setPassword, errorMessage, clickIngreso, 
                 <Input
                     textLabel='Correo'
                     onChange={setEmail}
-                    textoPlaceholder='Email'
+                    textoPlaceholder='Usuario'
                     typeInp='text'
                     value={email}
                     textId='email'
