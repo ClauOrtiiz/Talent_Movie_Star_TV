@@ -15,33 +15,17 @@ export const MovieStar = () => {
 
   //Funcion para extraccion de cartelera
 
-  const argumentosPopulares = [1, 2, 3, 4, 5, 6, 7, 8];
-  const [dataPopulares, setDataPopulares] = useState([]);
-  const [error, setError] = useState(null);
-
-  // useEffect(() => {
-  //   const requests = argumentosPopulares.map((arg) => obtenerPopulares(arg));
-
-  //   Promise.all(requests)
-  //     .then((results) => {
-  //       setDataPopulares(results);
-  //       console.log('Resultados de obtenerPopulares:', results);
-  //     })
-  //     .catch((error) => {
-  //       setError(error);
-  //     });
-  // }, [argumentosPopulares]);
-
   useEffect(() => {
-    obtenerEstrenoCartelera()
+    obtenerEstrenoCartelera(2)
       .then(cartelera => {
-        setDataCartelera(cartelera);
+        setDataPopulares(cartelera);
         console.log('populares', cartelera)
       })
       .catch(error => {
         setError(error);
       })
   }, [])
+
 
 
   // Funcion extraccion de populares
@@ -53,6 +37,33 @@ export const MovieStar = () => {
       .then(popular => {
         setDataPopular(popular);
         console.log('viendoo', popular)
+      })
+      .catch(error => {
+        setError(error);
+      })
+  }, [])
+
+  const [dataPopular2, setDataPopular2] = useState([]);
+
+
+  useEffect(() => {
+    obtenerPopulares(2)
+      .then(cartelera => {
+        setDataPopular2(cartelera);
+        console.log('populares', cartelera)
+      })
+      .catch(error => {
+        setError(error);
+      })
+  }, [])
+
+  const [dataPopular3, setDataPopular3] = useState([]);
+
+  useEffect(() => {
+    obtenerPopulares(3)
+      .then(cartelera => {
+        setDataPopular3(cartelera);
+        console.log('populares', cartelera)
       })
       .catch(error => {
         setError(error);
@@ -96,19 +107,20 @@ export const MovieStar = () => {
         <article className='seccion-peliculas'>
           <h2 className='seccion-peliculas-h2'>Popular</h2>
           <section className='seccion-peliculas-popular'>
-            {/* {dataPopulares.flatMap((data) => {
-            return data.results.map((pelicula) => (
-              <PerfilPelicula
-                key={pelicula.id}
-                idPelicula={pelicula.id}
-                tituloPelicula={pelicula.original_title}
-                posterPelicula={pelicula.poster_path}
-                fechaEstreno={pelicula.release_date}
-              ></PerfilPelicula>
-            ));
-          })} */}
 
             {dataPopular.results && dataPopular.results.map((pelicula) => (
+
+              <PerfilPelicula key={pelicula.id} idPelicula={pelicula.id} tituloPelicula={pelicula.original_title} posterPelicula={pelicula.poster_path} fechaEstreno={pelicula.release_date} ></PerfilPelicula>
+
+            ))}
+
+            {dataPopular2.results && dataPopular2.results.map((pelicula) => (
+
+              <PerfilPelicula key={pelicula.id} idPelicula={pelicula.id} tituloPelicula={pelicula.original_title} posterPelicula={pelicula.poster_path} fechaEstreno={pelicula.release_date} ></PerfilPelicula>
+
+            ))}
+
+            {dataPopular3.results && dataPopular3.results.map((pelicula) => (
 
               <PerfilPelicula key={pelicula.id} idPelicula={pelicula.id} tituloPelicula={pelicula.original_title} posterPelicula={pelicula.poster_path} fechaEstreno={pelicula.release_date} ></PerfilPelicula>
 

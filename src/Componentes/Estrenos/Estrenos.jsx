@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { obtenerEstrenoCartelera } from '../../services/servicesProvider'
+import { Link } from 'react-router-dom';
 
 import './Estrenos.css'
 
@@ -48,20 +49,24 @@ export const Estrenos = () => {
                     initialSlide: 1
                 }
             },
-            
+
         ]
     };
 
     return (
         <section className='contenedor-estreno'>
-      
+
             <Slider {...settings}>
                 {dataEstrenos.results && dataEstrenos.results.slice(0, 4).map((estrenos, index) => (
                     <div className='item' key={index}>
-                        <TarjetaEstreno
-                            imagen={'https://image.tmdb.org/t/p/original' + estrenos.backdrop_path}
-                        >
-                        </TarjetaEstreno>
+                        <Link to={`/pruebas/pruebaDetalle/${estrenos.id}`}>
+                            <TarjetaEstreno
+                                imagen={'https://image.tmdb.org/t/p/original' + estrenos.backdrop_path}
+                                title={estrenos.title}
+                            >
+                            </TarjetaEstreno>
+                        </Link>
+
                     </div>
                 ))}
             </Slider>
