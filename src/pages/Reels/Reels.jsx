@@ -98,9 +98,11 @@ export const Reels = () => {
 
     // Usamos Promise.all para realizar dos peticiones simultáneamente.
     Promise.all(promises)
-      .then((respuestas) => {
-        const favoritosDeStorage=JSON.parse(localStorage.getItem('favoritos'))
-        console.log(favoritosDeStorage)
+      .then((respuestas) => {        
+        let favoritosDeStorage=JSON.parse(localStorage.getItem('favoritos'))        
+        if (!favoritosDeStorage) {
+          favoritosDeStorage = [];
+        }       
         let allVideos = respuestas.flatMap(respuesta => {
           // Obtener el id de la película actual
           const idPelicula = respuesta.id        
