@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './perfilPelicula.css'
 import { Link } from 'react-router-dom';
-
+import hearth2 from '../../assets/hearth-2.png'
+import hearth1 from '../../assets/hearth-1.png'
 
 export const PerfilPelicula = ({ idPelicula, tituloPelicula, posterPelicula, fechaEstreno, escucharCheckFavorito }) => {
 
@@ -52,8 +53,8 @@ export const PerfilPelicula = ({ idPelicula, tituloPelicula, posterPelicula, fec
 
       <section className='seccion-favorito' onClick={clickFavorito} >
         {meGusta ?
-          <img src='../public/Iconos/hearth-2.png' className='icon' alt="No me gusta"></img> :
-          <img src='../public/Iconos/hearth-1.png' className='icon' alt="Me gusta"></img>
+          <img src={hearth2} className='icon' alt="No me gusta"></img> :
+          <img src={hearth1} className='icon' alt="Me gusta"></img>
         }
       </section>
 

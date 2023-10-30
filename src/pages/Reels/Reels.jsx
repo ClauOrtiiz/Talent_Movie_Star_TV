@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import './Reels.css';
+import hearth1 from '../../assets/hearth-1.png'
+import hearth2 from '../../assets/hearth-2.png'
 import { obtenerEstrenoCartelera, obtenerPeliculasRecomendadas, obtenerPopulares, obtenerVideosPelicula } from "../../services/servicesProvider";
 import { YouTubePlayer } from "./YouTubePlayer";
 export const Reels = () => {
@@ -188,8 +190,8 @@ export const Reels = () => {
             <div className='boxVideo'>
               <section className='seccion-favorito favorito-reel'  onClick={()=>clickFavorito(elemento.idPelicula)}>
                 {elemento.isFavorito ?
-                  <img src='../public/Iconos/hearth-2.png' className='icono-reel' alt="No me gusta"></img> :
-                  <img src='../public/Iconos/hearth-1.png' className='icono-reel' alt="Me gusta"></img>
+                  <img src={hearth2} className='icono-reel' alt="No me gusta"></img> :
+                  <img src={hearth1} className='icono-reel' alt="Me gusta"></img>
                 }
               </section>
               <div className="boxVideoOverlay" onClick={handleSwiperSlideClick}></div>

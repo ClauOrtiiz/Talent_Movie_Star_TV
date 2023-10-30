@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavegadorEncabezado } from '../Navegador/NavegadorEncabezado'
 import { Buscador } from '../../pages/ComponenteTest/Buscador/Buscador'
-
+import logo from '../../assets/logo.png'
 export const HeaderEscritorio = (perfil) => {
 
 
@@ -10,7 +10,7 @@ export const HeaderEscritorio = (perfil) => {
 
             <header className='header-movil'>
                 <section className='seccion-elementos logo'>
-                    <img src="../public/Iconos/logo.png" alt="MovieStar" />
+                    <img src={logo} alt="MovieStar" />
                 </section>
                 <section className='seccion-buscador-escritorio'>
                     <Buscador></Buscador>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Buscador } from '../../pages/ComponenteTest/Buscador/Buscador';
-import home2 from '../../../public/Iconos/home2.png'
-import search1 from '../../../public/Iconos/search1.png'
-import playlist1 from '../../../public/Iconos/playlist1.png'
-import hearth1 from '../../../public/Iconos/hearth1.png'
-import chatBot from '../../../public/Iconos/chatBot.png'
+import home2 from '../../assets/home2.png'
+import search1 from '../../assets/search1.png'
+import playlist1 from '../../assets/playlist1.png'
+// import hearth1 from '../../../public/Iconos/hearth1.png'
+// import chatBot from '../../../public/Iconos/chatBot.png'
 import { ModalChatBot } from '../Modal/ModalChatBot';
 import { ModalChatBotIcon } from '../Modal/ModalChatBotIcon';
 import './navegador.css';

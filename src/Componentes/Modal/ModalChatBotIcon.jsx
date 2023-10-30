@@ -1,5 +1,5 @@
 import React from 'react'
-import chatBot from '../../../public/Iconos/chatBot.png'
+import chatBot from '../../assets/chatBot.png'
 import { ModalChatBot } from './ModalChatBot'
 import { useState } from 'react'
 import '../Navegador/navegador.css'
