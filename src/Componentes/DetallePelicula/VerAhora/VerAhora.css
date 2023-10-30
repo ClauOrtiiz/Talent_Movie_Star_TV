@@ -1,0 +1,52 @@
+.contenedorGeneral-btns {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+    align-items: center;
+}
+
+.contenedor-btns {
+    width: 88%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-play {
+    background-color: #F6A63B;
+    padding: 12px;
+    width: 60%;
+    max-width: 140px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    color: white;
+    font-size:  14px;
+    border: none;
+    
+}
+
+.contenedor-descargar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+@media(min-width:800px){
+    .btn-play {
+        background-color: #F6A63B;
+        padding: 15px;
+        width: 43%;
+        max-width: 160px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 17px;
+        color: white;
+        font-size:  16px;
+        border: none;
+        
+    } 
+}

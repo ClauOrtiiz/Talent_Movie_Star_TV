@@ -1,7 +1,7 @@
 .article-pelicula {
 
-    width: 150px;
-    height: 280px;
+    width: 140px;
+    height: 260px;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -11,11 +11,18 @@
     gap: 5px;
  
  
+    &:hover {
+        width: 150px;
+        height: 285px;
+        transition: all .5s ease
+      }
+  
+
 }
 
 
-.section-pelicula{
 
+.section-pelicula{
     display: flex;
     flex-flow: column;
     align-items: start;
@@ -25,6 +32,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     position: relative;
+ 
 }
 .section-pelicula h3{
     color: rgb(116, 112, 112);
@@ -84,4 +92,27 @@
     width: 100%;
     object-fit: cover;
 
+}
+
+@media(min-width: 468px) {
+    .seccion-peliculas-h2 {
+        font-size: 17px;
+    }
+
+}
+   
+@media(min-width: 950px) {
+    
+    .article-pelicula {
+        width: 170px;
+        height: 300px;
+      
+        &:hover {
+            width: 180px;
+            height: 320px;
+            transition: all .5s ease
+          }
+
+    }
+    
 }

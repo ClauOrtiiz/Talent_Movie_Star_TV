@@ -1,11 +1,18 @@
-/* Estilo del contenedor flex */
+.contenedorGeneral-detallePelicula{
+  margin-top: 125px;
+
+}
+.contenedorGeneral{
+  margin-top: 5px;
+ 
+}
+
 .contenedor-flex {
   display: flex;
   background: #141414;
   color: white;
   font-family: Arial, sans-serif;
   text-align: center;
-  /* overflow-x: scroll */
 }
 
 .video {
@@ -17,3 +24,24 @@
   background-color: #000;
 }
 
+.footer-detalle-pelicula{
+    
+    margin-top: auto;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    margin-bottom: -10px;
+ 
+
+}
+
+@media(min-width:800px){
+  .contenedorGeneral-detallePelicula{
+    margin-top: 200px;
+  }
+  
+}

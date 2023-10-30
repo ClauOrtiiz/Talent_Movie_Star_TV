@@ -20,7 +20,6 @@ body {
 
 .main {
     width: 100%;
-    margin-top: 115px;
     display: flex;
     flex-flow: column;
     gap: 10%;
@@ -29,28 +28,28 @@ body {
     z-index: 0;
     margin-bottom: 5px;
     padding: 5%;
-    padding-top: 120px;
-
-
+    padding-top: 140px;
+  
 }
 
 .seccion-peliculas {
     padding: 10px;
     display: flex;
     flex-flow: column;
-    gap: 10px;
+    gap: 30px;
 }
 
 .seccion-peliculas-h2 {
-    color: rgb(226, 226, 226);
-    font-size: 20px;
-    text-shadow: 1px 1px 6px rgba(241, 241, 241, 0.5);
+    color: rgba(211, 211, 211, 0.938);
+    font-size: 17px;
+    text-shadow: 0px 2px 15px rgba(110, 110, 107, 0.514);
+    font-weight: 800;
 }
 
 .seccion-peliculas-popular {
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 20px;
     justify-items: center;
     justify-content: space-between;
@@ -59,21 +58,59 @@ body {
 }
 
 
+.seccion-peliculas-estreno h3 {
+    font-size: 17px;
+    color: rgb(177, 177, 177);
+    font-weight: 800;
+}
 
 .footer-movil {
+ 
     margin-top: auto;
     text-align: center;
-    padding: 10px;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 500;
-    margin-bottom: -10px;
+    padding: 0;
 }
 
 /* seccion de desplizamiento horizontal cartelera */
 .seccion-deslizador {
-    height: 300px;
+    height: 280px;
+
+}
+
+@media(min-width: 850px) {
+    .seccion-peliculas-h2 {
+        font-size: 25px;
+        font-weight: 800;
+    }
+
+    .seccion-peliculas-popular {
+        gap: 60px;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .footer-movil {
+        display: none;
+    }
+
+    .main {
+        gap: 30px;
+        margin-top: 115px;
+    }
+
+    .seccion-peliculas {
+        gap: 20px;
+    }
+
+    .seccion-deslizador {
+        height: 330px;
+    }
+
+    .seccion-peliculas-h2 {}
+
 
 }

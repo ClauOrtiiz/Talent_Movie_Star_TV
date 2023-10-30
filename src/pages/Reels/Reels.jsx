@@ -9,18 +9,73 @@ export const Reels = () => {
   const swiperRef = useRef(null);
   const [swiperReady, setSwiperReady] = useState(false);
   const playerRef = useRef([]);
-
+  const [peliculasCargadas,setPeliculasCargadas] =useState([])
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
   const [meGusta, setmeGusta] = useState(false);
   let videoPaused = false;
 
+  const clickFavorito = (idPelicula) => {
+    console.log(videoData)
+    console.log(videoData.find((elemento)=>elemento.idPelicula===idPelicula))
+    alternarFavoritos(idPelicula)
+
+    setmeGusta(estado => !estado);
+    console.log(buscarDatosPelicula(idPelicula))
+    
+    let favoritos = JSON.parse(localStorage.getItem('favoritos'));
+    if (!favoritos) {
+      favoritos = [];
+    }
+
+
+    const pelicula = favoritos?.find(x => x.idPelicula === idPelicula);
+    console.log(buscarDatosPelicula(idPelicula))
+    
+    if (pelicula) {
+      localStorage.setItem('favoritos', JSON.stringify(favoritos?.filter(x => x.idPelicula !== idPelicula)));
+    } else {
+      const {tituloPelicula,posterPelicula, fechaEstreno} =buscarDatosPelicula(idPelicula)
+      favoritos.push({ idPelicula, tituloPelicula, urlImagen: `${urlImagen}${posterPelicula}`, fechaEstreno });
+      localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    }
+
+
+  }
+
+  function alternarFavoritos(idPelicula) {
+    // Copia el arreglo de videoData actual
+    const copiaVideoData = [...videoData];
+
+    // Itera sobre la copia para alternar isFavorito
+    copiaVideoData.forEach((objeto) => {
+      if (objeto.idPelicula === idPelicula) {
+        objeto.isFavorito = !objeto.isFavorito;
+      }
+    });
+
+    // Actualiza el estado con la nueva copia
+    setVideoData(copiaVideoData);
+  }
+
+  function buscarDatosPelicula(idPelicula) {
+    console.log(peliculasCargadas)
+    const pelicula= peliculasCargadas.find(pelicula => pelicula.id === idPelicula);
+    console.log(pelicula)
+    return {
+      tituloPelicula:pelicula.title,
+      posterPelicula:pelicula.poster_path,
+      fechaEstreno:pelicula.release_date
+    }
+  }
+
+
   useEffect(() => {
     // Llamamos a la función para cargar los videos de las dos primeras películas.
-    console.log("test")
-    const misPeliculas = [315162, 667538, 507089, 901362];
+   
     obtenerPopulares()
       .then((respuesta) => {
         console.log(respuesta)
+        setPeliculasCargadas(respuesta.results)
         const idPeliculas = obtenerIdsDesdeObjeto(respuesta)
         cargarVideos(idPeliculas);
       })
@@ -41,10 +96,12 @@ export const Reels = () => {
     // Usamos Promise.all para realizar dos peticiones simultáneamente.
     Promise.all(promises)
       .then((respuestas) => {
-
+        const favoritosDeStorage=JSON.parse(localStorage.getItem('favoritos'))
+        console.log(favoritosDeStorage)
         let allVideos = respuestas.flatMap(respuesta => {
           // Obtener el id de la película actual
-          const idPelicula = respuesta.id
+          const idPelicula = respuesta.id        
+          const isFavorito= favoritosDeStorage.some(pelicula => pelicula.idPelicula === idPelicula);
           // Filtrar los videos por tipo
           const trailers = respuesta.results.filter(video => video.type === 'Trailer');
           const teasers = respuesta.results.filter(video => video.type === 'Teaser');
@@ -58,6 +115,7 @@ export const Reels = () => {
           ].flat();
           selectedVideos.forEach(video => {
             video.idPelicula = idPelicula;
+            video.isFavorito = isFavorito
           });
           return selectedVideos;
         });
@@ -80,15 +138,6 @@ export const Reels = () => {
       playerRef.current[activeVideoIndex].playVideo();
     }
   }, [swiperReady, activeVideoIndex]);
-  // // Función para pausar el video actual
-  // const pauseVideo = (player) => {
-  //   player.pauseVideo();
-  // };
-
-  // // Función para reproducir el video actual
-  // const playVideo = (player) => {
-  //   player.playVideo();
-  // };
 
   const handleSlideChange = () => {
     videoPaused = false;
@@ -134,22 +183,19 @@ export const Reels = () => {
         onSlideChange={handleSlideChange}
       >
         {videoData.map((elemento, index) => (
-          <SwiperSlide key={index} onClick={handleSwiperSlideClick}>
+          <SwiperSlide key={index} >
             <div className='boxVideo'>
-              <section className='seccion-favorito' >
-                {meGusta ?
-                  <img src='../public/Iconos/hearth-2.png' className='icon' alt="No me gusta"></img> :
-                  <img src='../public/Iconos/hearth-1.png' className='icon' alt="Me gusta"></img>
+              <section className='seccion-favorito favorito-reel'  onClick={()=>clickFavorito(elemento.idPelicula)}>
+                {elemento.isFavorito ?
+                  <img src='../public/Iconos/hearth-2.png' className='icono-reel' alt="No me gusta"></img> :
+                  <img src='../public/Iconos/hearth-1.png' className='icono-reel' alt="Me gusta"></img>
                 }
               </section>
-              <div className="boxVideoOverlay" ></div>
+              <div className="boxVideoOverlay" onClick={handleSwiperSlideClick}></div>
               <YouTubePlayer
                 videoId={elemento.key}
-                onReady={(player) => {
-                  console.log("check", player)
+                onReady={(player) => {                  
                   playerRef.current[index] = player;
-
-                  console.log("valorActual", playerRef)
                 }}
               />
             </div>

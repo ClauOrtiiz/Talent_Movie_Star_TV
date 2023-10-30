@@ -1,34 +1,36 @@
-/* Estilo del contenedor flex */
-.contenedor-flex {
+.contenedorGeneralD {
   display: flex;
-  background: #141414;
+  justify-content: center;
+}
+
+
+.generos-descripcion {
+  margin-left: -10px;
+  color: #d1cccc;
+  display: flex;
+}
+
+.contenedor-descripcion {
+  display: flex;
+  flex-direction: column;
+  width: 88%;
+  margin-top: 15px;
+}
+
+.titulo-descripcion {
   color: white;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
 }
 
-/* Estilo de la descripción */
-.descripcion {
-
-  font-size: 10px;
-  text-shadow: 2px 2px 4px #000;
-  width: 100%; 
-  margin-left: 25px; 
-  margin-right: 25px;
+.texto-descripcion {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 15px;
+  color: white;
 }
+
 .genero {
-  display: inline-block; 
-  margin: 10px;
-  align-items: center;
+  padding: 15px 10px 7px 10px;
+  list-style: none;
+  display: inline-block;
 }
-.descripcion p {
-  text-align:justify;
-}
-.fecha {
-  display: inline-block; 
-  margin: 10px;
-  align-items: center;
-}
-.puntaje {
-  float: right;
-} 
