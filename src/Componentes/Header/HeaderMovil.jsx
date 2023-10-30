@@ -1,12 +1,12 @@
 import React from 'react'
-import './HeaderMovil.css'
+import './headerMovil.css'
 import { NavegadorEncabezado } from '../Navegador/NavegadorEncabezado'
 import { useState, useEffect, useRef } from 'react'
 import { Buscador } from '../../pages/ComponenteTest/Buscador/Buscador'
 import { Link } from 'react-router-dom'
-import Logo from '../../../public/Iconos/logo.png'
-import search from '../../../public/Iconos/search.png'
-import playlist from '../../../public/Iconos/playlist.png'
+import Logo from '../../assets/logo.png'
+import search from '../../assets/search.png'
+import playlist from '../../assets/playlist.png'
 import { ModalChatBotIcon } from '../Modal/ModalChatBotIcon'
 
 export const HeaderMovil = () => {
