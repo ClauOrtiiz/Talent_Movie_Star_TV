@@ -18,7 +18,7 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
         setRespuestaChatBot("Un momento porfavor ....")
         setUltimaPregunta(`Tu pregunta: ${mensage}`)
         const misdatos = { pregunta: mensage }
-        const respuesta = await fetch('https://4qc5jf9r-3100.brs.devtunnels.ms/api/miOpenAI', {
+        const respuesta = await fetch('https://yesica-chui-chalco.xyz/app3/api/miOpenAI', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -51,6 +51,10 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
     const handleEnviarClick = () => {
         if (!bloquearEnvio) {
             const message = textareaRef.current.value;
+            if (message.trim() === "") {
+                setRespuestaChatBot("Por favor, ingrese una pregunta.")
+                return
+            }
             console.log('Texto en el textarea:', message);
             textareaRef.current.value = ""
             llamarAchatGpt(message);
@@ -78,7 +82,7 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
                     <h3>{ultimaPregunta}</h3>
                 </section>
 
-                <textarea disabled={bloquearEnvio} ref={textareaRef} className='textarea-pregunta' placeholder='Ingrese su pregunta...' onKeyUp={handleKeyPress} />
+                <textarea  maxlength="200" disabled={bloquearEnvio} ref={textareaRef} className='textarea-pregunta' placeholder='Ingrese su pregunta...' onKeyUp={handleKeyPress} />
                 <section >
                     <button  
                         style={!bloquearEnvio ? {} : {
