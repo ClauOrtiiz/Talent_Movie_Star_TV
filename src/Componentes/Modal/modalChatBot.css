@@ -46,7 +46,7 @@
      min-height: 80px;
      max-height: 300px;
      resize: none;
- 
+
      border: none;
      font-size: 14px;
      line-height: 1.4;
@@ -107,6 +107,7 @@
  }
 
  .seccion-input p {
+     padding: 10px;
      width: 100%;
      min-height: 100px;
      height: 100%;
@@ -115,46 +116,46 @@
  }
 
  @media(min-width:800px) {
-     .seccion-input  {
+     .seccion-input {
          font-size: 12px;
      }
+
      .seccion-modal {
-        width: 80%;
-        max-width: 600px;
-        height: 80%;
-        padding: 10px;
+         width: 80%;
+         max-width: 600px;
+         height: 80%;
+         padding: 10px;
 
-    }
-    .textarea-pregunta {
-        width: 100%;
-        min-height: 100px;
-        max-height: 300px;
+     }
 
-        padding: 10px;
-   
-    }
-   
+     .textarea-pregunta {
+         width: 100%;
+         min-height: 100px;
+         max-height: 300px;
+
+         padding: 10px;
+
+     }
+
 
  }
 
-/* CSS */
-.button-enviar {
-    /* Estilo normal */
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-  
-    /* Estilo cuando está deshabilitado */
-    &[disabled] {
-      background-color: gray;
-      color: #999;
-      cursor: not-allowed;
-    }
-  
-    /* Estilo al pasar el ratón sobre el botón (hover) */
-    &:not([disabled]):hover {
-      background-color: #0056b3;
-    }
-  }
-  
- 
+ /* CSS */
+ .button-enviar {
+     /* Estilo normal */
+     background-color: #007bff;
+     color: white;
+     cursor: pointer;
+
+     /* Estilo cuando está deshabilitado */
+     &[disabled] {
+         background-color: gray;
+         color: #999;
+         cursor: not-allowed;
+     }
+
+     /* Estilo al pasar el ratón sobre el botón (hover) */
+     &:not([disabled]):hover {
+         background-color: #0056b3;
+     }
+ }

@@ -12,12 +12,13 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
     const textareaRef = useRef(null);
     const [respuestaChatBot, setRespuestaChatBot] = useState("")
     const [bloquearEnvio, setBloquearEnvio] = useState(false);
-    // const [inputText, setInputText] = useState('');
+    const [ultimaPregunta, setUltimaPregunta] = useState('Hola Cinéfilo, ingrese su consulta aqui');
     async function llamarAchatGpt(mensage) {
         setBloquearEnvio(true); // Bloquea el envío
-        /*
+        setRespuestaChatBot("Un momento porfavor ....")
+        setUltimaPregunta(`Tu pregunta: ${mensage}`)
         const misdatos = { pregunta: mensage }
-        const respuesta = await fetch('http://localhost:3100/api/miOpenAI', {
+        const respuesta = await fetch('https://4qc5jf9r-3100.brs.devtunnels.ms/api/miOpenAI', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -25,14 +26,16 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
             body: JSON.stringify(misdatos)
         })
         const datos = await respuesta.json()
-        return datos.data
-        */
-        setTimeout(() => {
-            console.log("respuesta chatbot")
-            setRespuestaChatBot("Respondiendo desde el chatbot")
-            setBloquearEnvio(false);
-        }, 9000)
-        setRespuestaChatBot("Un momento porfavor ....")
+
+        setRespuestaChatBot(datos.data)
+        setBloquearEnvio(false);
+
+        // setTimeout(() => {
+        //     console.log("respuesta chatbot")
+        //     setRespuestaChatBot("Respondiendo desde el chatbot")
+        //     setBloquearEnvio(false);
+        // }, 9000)
+
     }
 
     const handleKeyPress = (e) => {
@@ -54,6 +57,11 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
         }
     };
 
+    const reiniciarUltimaPregunta = () => {
+        setUltimaPregunta('Hola Cinéfilo, ingrese su consulta aquí');
+        setRespuestaChatBot('')
+    };
+
     return (
 
         <Modal
@@ -63,7 +71,7 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
         >
             <section className='seccion-input'>
                 <section className='seccion-enviar'>
-                    <h2>Hola Cinéfilo, ingrese su consulta aqui </h2>
+                    <h2>{ultimaPregunta}</h2>
                     <button
                         style={!bloquearEnvio ? {} : {
                             backgroundColor: 'gray',
@@ -78,7 +86,11 @@ export const ModalChatBot = ({ isOpen, closeModal }) => {
                 <p>{respuestaChatBot}</p>
             </section>
 
-            <button onClick={closeModal} className='close-modal'>X</button>
+            <button onClick={() => {
+                closeModal();
+                reiniciarUltimaPregunta(); // Reiniciar ultimaPregunta
+                
+            }} className='close-modal'>X</button>
         </Modal >
 
 
