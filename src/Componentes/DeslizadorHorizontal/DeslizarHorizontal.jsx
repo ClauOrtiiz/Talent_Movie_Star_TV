@@ -19,11 +19,6 @@ import { obtenerEstrenoCartelera } from '../../services/servicesProvider';
 
 export const DeslizadorHorizontal = ({ peticionApi }) => {
 
-
-    // return(
-    //     <div>holas</div>
-    // )
-
     const [data, setData] = useState([]);
 
     useEffect(() => {

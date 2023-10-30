@@ -6,10 +6,10 @@ import { HeaderMovil } from '../../Componentes/Header/HeaderMovil'
 import { HeaderEscritorio } from '../../Componentes/Header/HeaderEscritorio'
 import { obtenerEstrenoCartelera } from '../../services/servicesProvider'
 import { obtenerPopulares } from '../../services/servicesProvider'
-import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/Deslizadorhorizontal'
 import { Estrenos } from '../../Componentes/Estrenos/Estrenos'
 
 import '../pages.css'
+import { DeslizadorHorizontal } from '../../Componentes/DeslizadorHorizontal/DeslizarHorizontal'
 
 export const MovieStar = () => {
 
