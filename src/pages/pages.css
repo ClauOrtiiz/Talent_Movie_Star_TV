@@ -65,15 +65,15 @@ body {
 }
 
 .footer-movil {
+ 
     margin-top: auto;
     text-align: center;
-    padding: 10px;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 500;
-    margin-bottom: -10px;
+    padding: 0;
 }
 
 /* seccion de desplizamiento horizontal cartelera */

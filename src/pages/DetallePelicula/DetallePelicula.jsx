@@ -6,6 +6,7 @@ import { HeaderMovil } from "../../Componentes/Header/HeaderMovil";
 import { Comentario } from "../../Componentes/DetallePelicula/Comentarios/Comentario";
 import { VerAhora } from "../../Componentes/DetallePelicula/VerAhora/VerAhora";
 import { useParams } from 'react-router-dom';
+import { NavegadorMovil } from "../../Componentes/Navegador/NavegadorMovil";
 import "./Detalles.css";
 import '../pages.css'
 
@@ -28,16 +29,17 @@ export const DetallePelicula = () => {
 
 
   return (
+
     <article className="video-container">
       <header className='header'>
-        <HeaderMovil></HeaderMovil>
+      <HeaderMovil></HeaderMovil>
       </header>
 
       <section className="contenedorGeneral-detallePelicula">
         {video && (
           <iframe
             width="100%"
-            height="400"
+            height="600"
             src={`https://www.youtube.com/embed/${video.key}?si=aVicG-IXOHeD7NaU`}
             title="YouTube video player"
             frameborder="0px"
@@ -50,6 +52,9 @@ export const DetallePelicula = () => {
         <Reparto idPelicula={idPelicula}></Reparto>
         <Comentario></Comentario>
       </section>
+      <footer className="footer-movil">
+        <NavegadorMovil></NavegadorMovil>
+      </footer>
     </article>
 
   );

@@ -5,6 +5,10 @@ import { useState, useEffect, useRef } from 'react'
 import { Buscador } from '../../pages/ComponenteTest/Buscador/Buscador'
 import { Link } from 'react-router-dom'
 import Logo from '../../../public/Iconos/logo.png'
+import search from '../../../public/Iconos/search.png'
+import playlist from '../../../public/Iconos/playlist.png'
+import { ModalChatBotIcon } from '../Modal/ModalChatBotIcon'
+
 export const HeaderMovil = () => {
 
   // Extraccion de nombre de usuario
@@ -66,7 +70,7 @@ export const HeaderMovil = () => {
 
               {!mostrarBuscador && (
                 <img
-                  src='../public/Iconos/search.png'
+                  src={search}
                   className='icono-playlist-escritorio'
                   onClick={toggleBuscador}
                 />
@@ -80,10 +84,15 @@ export const HeaderMovil = () => {
 
             <section >
               <Link to='/Reels' >
-                <img src="../public/Iconos/playlist.png" alt="" className='icono-playlist-escritorio' />
+                <img src={playlist} alt="" className='icono-playlist-escritorio' />
               </Link>
 
             </section>
+            <section>
+              <ModalChatBotIcon></ModalChatBotIcon>
+            </section>
+
+            
 
           </article>
           <section className='seccion-elementos perfil'>

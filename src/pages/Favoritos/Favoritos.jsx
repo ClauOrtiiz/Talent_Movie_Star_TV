@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { HeaderMovil } from '../../Componentes/Header/HeaderMovil'
 import { PerfilPelicula } from '../../Componentes/PerfilPelicula/PerfilPelicula';
+import { NavegadorMovil } from '../../Componentes/Navegador/NavegadorMovil';
 import './Favoritos.css'
 
 export const Favoritos = () => {
@@ -36,6 +37,9 @@ export const Favoritos = () => {
           ))}
         </section>
       </article>
+      <footer className='footer-movil'>
+        <NavegadorMovil></NavegadorMovil>
+      </footer>
 
     </div>
   )
